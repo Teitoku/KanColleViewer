@@ -67,6 +67,7 @@
     <Reference Include="System.Interactive">
       <HintPath>..\packages\Ix-Main.1.2.2\lib\net45\System.Interactive.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Reactive.Core">
       <HintPath>..\packages\Rx-Core.2.2.2\lib\net45\System.Reactive.Core.dll</HintPath>
     </Reference>
@@ -194,6 +195,7 @@
     <Compile Include="TimerNotificator.cs" />
     <Compile Include="Translations.cs" />
     <Compile Include="Updater.cs" />
+    <Compile Include="WebLogger.cs" />
     <Compile Include="Win32\INTERNET_PROXY_INFO.cs" />
     <Compile Include="Win32\NativeMethods.cs" />
   </ItemGroup>

@@ -22,7 +22,7 @@ namespace Grabacr07.KanColleWrapper
 		private int dockid;
 		private readonly int[] shipmats;
 
-		private enum LogType
+		protected enum LogType
 		{
 			BuildItem,
 			BuildShip,
@@ -79,7 +79,7 @@ namespace Grabacr07.KanColleWrapper
 				br.api_win_rank, DateTime.Now.ToString("M/d/yyyy H:mm"));
 		}
 
-		private void Log(LogType type, string format, params object[] args)
+		protected void Log(LogType type, string format, params object[] args)
 		{
 			if (!this.EnableLogging) return;
 
