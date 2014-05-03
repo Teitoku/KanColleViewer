@@ -52,8 +52,11 @@ namespace Grabacr07.KanColleViewer.ViewModels
 						this.Content = this.mainContent ?? (this.mainContent = new MainContentViewModel());
 						StatusService.Current.Set(Properties.Resources.StatusBar_Ready);
 						ThemeService.Current.ChangeAccent(Accent.Blue);
-						if (KanColleClient.Current.Homeport != null)
-							KanColleClient.Current.Homeport.Logger.EnableLogging = Settings.EnableLogging;
+                        if (KanColleClient.Current.Homeport != null)
+                        {
+                            KanColleClient.Current.Homeport.Logger.EnableLogging = Settings.EnableLogging;
+                            KanColleClient.Current.Homeport.WebLogger.EnableLogging = Settings.EnableWebLogging;
+                        }
 						break;
 					case Mode.InSortie:
 						// 今後の実装にご期待ください

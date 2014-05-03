@@ -207,9 +207,27 @@ namespace Grabacr07.KanColleViewer.ViewModels
 
 		#endregion
 
-		#region Libraries 変更通知プロパティ
+        #region EnableWebLogging
 
-		private IEnumerable<BindableTextViewModel> _Libraries;
+        public bool EnableWebLogging
+        {
+            get { return Settings.Current.EnableWebLogging; }
+            set
+            {
+                if (Settings.Current.EnableWebLogging != value)
+                {
+                    Settings.Current.EnableWebLogging = value;
+                    KanColleClient.Current.Homeport.WebLogger.EnableLogging = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
+
+        #endregion
+
+        #region Libraries 変更通知プロパティ
+
+        private IEnumerable<BindableTextViewModel> _Libraries;
 
 		public IEnumerable<BindableTextViewModel> Libraries
 		{

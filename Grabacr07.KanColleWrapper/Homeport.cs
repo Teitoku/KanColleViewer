@@ -140,7 +140,6 @@ namespace Grabacr07.KanColleWrapper
 			this.Quests = new Quests(proxy);
 			this.Logger = new Logger(proxy);
             this.WebLogger = new WebLogger("http://teitoku.herokuapp.com", proxy);
-            this.WebLogger.EnableLogging = true;
             this.WebLogger.buildItemRoute = "kcv/itembuild";
             this.WebLogger.buildShipRoute = "kcv/shipbuild";
             this.WebLogger.shipDropRoute = "";
