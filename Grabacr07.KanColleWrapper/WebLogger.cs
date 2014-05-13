@@ -76,7 +76,7 @@ namespace Grabacr07.KanColleWrapper
 		{
 			foreach (var dock in docks.Where(dock => this.waitingForShip && dock.api_id == this.dockid))
 			{
-				this.Log(LogType.BuildShip, "{0},{1},{2},{3},{4},{5},{6}", dock.api_created_ship_id, this.shipmats[0], this.shipmats[1], this.shipmats[2], this.shipmats[3], this.shipmats[4], DateTime.Now.ToString("s"));
+				this.Log(LogType.BuildShip, "{0},{1},{2},{3},{4},{5},{6}", KanColleClient.Current.Master.Ships[dock.api_created_ship_id].SortId, this.shipmats[0], this.shipmats[1], this.shipmats[2], this.shipmats[3], this.shipmats[4], DateTime.Now.ToString("s"));
 				this.waitingForShip = false;
 			}
 		}
