@@ -2,19 +2,14 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Reactive.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 using Grabacr07.KanColleWrapper.Internal;
 using Grabacr07.KanColleWrapper.Models;
 using Grabacr07.KanColleWrapper.Models.Raw;
 using Livet;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Runtime.Serialization;
-
 
 namespace Grabacr07.KanColleWrapper
 {
@@ -26,9 +21,10 @@ namespace Grabacr07.KanColleWrapper
 		private int dockid;
 		private readonly int[] shipmats;
 
-        public string buildItemRoute { get; set; }
-        public string buildShipRoute { get; set; }
-        public string shipDropRoute { get; set; }
+        public string WebLoggerUrl { get; set; }
+        public string BuildItemRoute { get; set; }
+        public string BuildShipRoute { get; set; }
+        public string ShipDropRoute { get; set; }
 
         private HttpClient client;
 
@@ -39,12 +35,8 @@ namespace Grabacr07.KanColleWrapper
             ShipDrop
         };
 
-		internal WebLogger(string uriString, KanColleProxy proxy)
-		{
-            client = new HttpClient();
-            client.BaseAddress = new Uri(uriString);
-            client.DefaultRequestHeaders.Accept.Clear();
-
+		internal WebLogger(KanColleProxy proxy)
+        {
 			this.shipmats = new int[5];
 
 			// ちょっと考えなおす
@@ -76,7 +68,15 @@ namespace Grabacr07.KanColleWrapper
 		{
 			foreach (var dock in docks.Where(dock => this.waitingForShip && dock.api_id == this.dockid))
 			{
-				this.Log(LogType.BuildShip, "{0},{1},{2},{3},{4},{5},{6}", KanColleClient.Current.Master.Ships[dock.api_created_ship_id].SortId, this.shipmats[0], this.shipmats[1], this.shipmats[2], this.shipmats[3], this.shipmats[4], DateTime.Now.ToString("s"));
+                this.Log(LogType.BuildShip, "{0},{1},{2},{3},{4},{5},{6},{7}", 
+                    KanColleClient.Current.Master.Ships[dock.api_created_ship_id].SortId, 
+                    this.shipmats[0], 
+                    this.shipmats[1], 
+                    this.shipmats[2], 
+                    this.shipmats[3], 
+                    this.shipmats[4], 
+                    KanColleClient.Current.Homeport.Organization.Fleets[1].Ships[0].Info.ShipType.Name, 
+                    DateTime.Now.ToString("s"));
 				this.waitingForShip = false;
 			}
 		}
@@ -92,10 +92,10 @@ namespace Grabacr07.KanColleWrapper
 				br.api_win_rank, DateTime.Now.ToString("s"));
 		}
 
-        private async Task postLog(string route, string format, params object[] args)
+        private async Task PostLog(string route, string format, params object[] args)
         {
-            string data = String.Format(format, args);
-            HttpResponseMessage resp = await client.PostAsync(route, new StringContent(data));
+            var data = String.Format(format, args);
+            var resp = await this.client.PostAsync(route, new StringContent(data));
             resp.EnsureSuccessStatusCode();
         }
 
@@ -103,18 +103,25 @@ namespace Grabacr07.KanColleWrapper
         {
             if (!this.EnableLogging) return;
 
+            if(this.client == null)
+            {
+                if (WebLoggerUrl.IsEmpty()) return;
+                this.client = new HttpClient { BaseAddress = new Uri(WebLoggerUrl) };
+                this.client.DefaultRequestHeaders.Accept.Clear();
+            }
+
             try
             {
                 switch (type)
                 {
                     case LogType.BuildItem:
-                        postLog(buildItemRoute, format, args).Wait();
+                        this.PostLog(this.BuildItemRoute, format, args).Wait();
                         break;
                     case LogType.BuildShip:
-                        postLog(buildShipRoute, format, args).Wait();
+                        this.PostLog(this.BuildShipRoute, format, args).Wait();
                         break;
                     case LogType.ShipDrop:
-                        postLog(shipDropRoute, format, args).Wait();
+                        this.PostLog(this.ShipDropRoute, format, args).Wait();
                         break;
                 }
             }

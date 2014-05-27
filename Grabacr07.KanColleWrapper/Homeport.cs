@@ -139,10 +139,7 @@ namespace Grabacr07.KanColleWrapper
 			this.Dockyard = new Dockyard(proxy);
 			this.Quests = new Quests(proxy);
 			this.Logger = new Logger(proxy);
-            this.WebLogger = new WebLogger("http://teitoku.herokuapp.com", proxy);
-            this.WebLogger.buildItemRoute = "kcv/itembuild";
-            this.WebLogger.buildShipRoute = "kcv/shipbuild";
-            this.WebLogger.shipDropRoute = "";
+            this.WebLogger = new WebLogger(proxy);
 
 			proxy.api_port.TryParse<kcsapi_port>().Subscribe(x =>
 				{
