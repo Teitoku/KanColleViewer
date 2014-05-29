@@ -199,7 +199,7 @@ namespace Grabacr07.KanColleViewer.ViewModels
 				if (Settings.Current.EnableLogging != value)
 				{
 					Settings.Current.EnableLogging = value;
-					KanColleClient.Current.Homeport.Logger.EnableLogging = value;
+					KanColleClient.Current.Logger.EnableLogging = value;
 					this.RaisePropertyChanged();
 				}
 			}
@@ -217,7 +217,7 @@ namespace Grabacr07.KanColleViewer.ViewModels
                 if (Settings.Current.EnableWebLogging != value)
                 {
                     Settings.Current.EnableWebLogging = value;
-                    KanColleClient.Current.Homeport.WebLogger.EnableLogging = value;
+                    KanColleClient.Current.WebLogger.EnableLogging = value;
                     this.RaisePropertyChanged();
                 }
             }

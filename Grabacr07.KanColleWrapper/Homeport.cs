@@ -48,15 +48,6 @@ namespace Grabacr07.KanColleWrapper
 		/// </summary>
 		public Rankings Rankings { get; private set; }
 
-		/// <summary>
-		/// Logs events such as ship drops, crafts, and item developments.
-		/// </summary>
-		public Logger Logger { get; private set; }
-
-        /// <summary>
-        /// Logs events to a remote web server
-        /// </summary>
-        public WebLogger WebLogger { get; private set; }
 
 		#region Admiral 変更通知プロパティ
 
@@ -138,8 +129,6 @@ namespace Grabacr07.KanColleWrapper
 			this.Repairyard = new Repairyard(this, proxy);
 			this.Dockyard = new Dockyard(proxy);
 			this.Quests = new Quests(proxy);
-			this.Logger = new Logger(proxy);
-            this.WebLogger = new WebLogger(proxy);
 
 			proxy.api_port.TryParse<kcsapi_port>().Subscribe(x =>
 				{
