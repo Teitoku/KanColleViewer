@@ -50,6 +50,16 @@ namespace Grabacr07.KanColleWrapper
 		/// </summary>
 		public Translations Translations { get; private set; }
 
+        /// <summary>
+        /// Logs events such as ship drops, crafts, and item developments.
+        /// </summary>
+        public Logger Logger { get; private set; }
+
+        /// <summary>
+        /// Logs events to a remote web server
+        /// </summary>
+        public WebLogger WebLogger { get; private set; }
+
 		#region IsStarted 変更通知プロパティ
 
 		private bool _IsStarted;
@@ -82,6 +92,9 @@ namespace Grabacr07.KanColleWrapper
 
 			this.Updater = new Updater();
 			this.Translations = new Translations();
+
+            this.Logger = new Logger(proxy);
+            this.WebLogger = new WebLogger(proxy);
 
 			proxy.api_start2.FirstAsync().Subscribe(async session =>
 			{

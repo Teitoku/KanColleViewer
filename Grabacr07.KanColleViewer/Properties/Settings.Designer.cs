@@ -169,5 +169,41 @@ namespace Grabacr07.KanColleViewer.Properties {
                 this["FlashEmbed"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://teitoku.net/")]
+        public string WebLoggerUrl {
+            get {
+                return ((string)(this["WebLoggerUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/kcv/itembuild")]
+        public string WebLoggerBuildItem {
+            get {
+                return ((string)(this["WebLoggerBuildItem"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/kcv/shipbuild")]
+        public string WebLoggerBuildShip {
+            get {
+                return ((string)(this["WebLoggerBuildShip"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string WebLoggerShipDrop {
+            get {
+                return ((string)(this["WebLoggerShipDrop"]));
+            }
+        }
     }
 }
