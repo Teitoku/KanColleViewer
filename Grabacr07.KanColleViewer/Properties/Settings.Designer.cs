@@ -172,7 +172,7 @@ namespace Grabacr07.KanColleViewer.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://teitoku.net/")]
         public string WebLoggerUrl {
             get {
                 return ((string)(this["WebLoggerUrl"]));
@@ -181,7 +181,7 @@ namespace Grabacr07.KanColleViewer.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("/kcv/itembuild")]
         public string WebLoggerBuildItem {
             get {
                 return ((string)(this["WebLoggerBuildItem"]));
@@ -190,7 +190,7 @@ namespace Grabacr07.KanColleViewer.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("/kcv/shipbuild")]
         public string WebLoggerBuildShip {
             get {
                 return ((string)(this["WebLoggerBuildShip"]));
