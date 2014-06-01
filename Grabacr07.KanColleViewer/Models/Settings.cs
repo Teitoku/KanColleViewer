@@ -51,6 +51,7 @@ namespace Grabacr07.KanColleViewer.Models
 				ScreenshotImageFormat = SupportedImageFormat.Png,
 				CanDisplayBuildingShipName = false,
 				EnableLogging = false,
+                EnableWebLogging = false,
 				EnableTranslations = true,
 				EnableAddUntranslated = true,
 				EnableCriticalNotify = true,
@@ -457,9 +458,28 @@ namespace Grabacr07.KanColleViewer.Models
 
 		#endregion
 
-		#region EnableTranslations 変更通知プロパティ
+        #region EnableWebLogging
 
-		private bool _EnableTranslations;
+        private bool _EnableWebLogging;
+
+        public bool EnableWebLogging
+        {
+            get { return this._EnableWebLogging; }
+            set
+            {
+                if (this._EnableWebLogging != value)
+                {
+                    this._EnableWebLogging = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
+
+        #endregion
+
+        #region EnableTranslations 変更通知プロパティ
+
+        private bool _EnableTranslations;
 
 		public bool EnableTranslations
 		{ 

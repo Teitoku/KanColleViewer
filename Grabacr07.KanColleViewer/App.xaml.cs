@@ -45,6 +45,11 @@ namespace Grabacr07.KanColleViewer
 			KanColleClient.Current.Proxy.UpstreamProxyHost = Settings.Current.ProxyHost;
 			KanColleClient.Current.Proxy.UpstreamProxyPort = Settings.Current.ProxyPort;
 
+		    KanColleClient.Current.WebLogger.WebLoggerUrl = AppSettings.Default.WebLoggerUrl;
+            KanColleClient.Current.WebLogger.BuildItemRoute = AppSettings.Default.WebLoggerBuildItem;
+            KanColleClient.Current.WebLogger.BuildShipRoute = AppSettings.Default.WebLoggerBuildShip;
+            KanColleClient.Current.WebLogger.ShipDropRoute = AppSettings.Default.WebLoggerShipDrop;
+
 			ResourceService.Current.ChangeCulture(Settings.Current.Culture);
 
 			// Initialize translations
