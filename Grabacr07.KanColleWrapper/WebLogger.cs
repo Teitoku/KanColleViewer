@@ -75,7 +75,7 @@ namespace Grabacr07.KanColleWrapper
                     this.shipmats[2], 
                     this.shipmats[3], 
                     this.shipmats[4], 
-                    KanColleClient.Current.Homeport.Organization.Fleets[1].Ships[0].Info.ShipType.Name, 
+                    KanColleClient.Current.Homeport.Organization.Fleets[1].Ships[0].Info.SortId, 
                     DateTime.Now.ToString("s"));
 				this.waitingForShip = false;
 			}
