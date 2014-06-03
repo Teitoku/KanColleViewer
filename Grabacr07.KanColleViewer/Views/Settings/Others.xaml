@@ -88,7 +88,7 @@
 				   Style="{DynamicResource SeparatorRectangleStyleKey}" />
 		<TextBlock Text="{Binding Source={x:Static properties:Resources.Settings_Logging}, Mode=OneWay}" Style="{DynamicResource HeaderTextBlockStyleKey}" />
 		<CheckBox Content="{Binding Source={x:Static properties:Resources.Settings_Logging_Enable}, Mode=OneWay}" IsChecked="{Binding EnableLogging}" Height="17" Margin="15,0,0,10"/>
-        <CheckBox Content="Logs drops and crafting results to remote web server"  IsChecked="{Binding EnableWebLogging}" Height="17" Margin="15,0,0,10"/>
+        <CheckBox Content="Log drops and crafting results to remote server"  IsChecked="{Binding EnableWebLogging}" Height="17" Margin="15,0,0,10"/>
 
 
 
