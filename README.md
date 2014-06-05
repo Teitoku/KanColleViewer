@@ -18,7 +18,15 @@ All builds can be found in the following links below.
 
 * [GitHub Releases](https://github.com/Yuubari/KanColleViewer/releases) -- Major revision binaries
 
+## To Do
+* A better display for the rankings table
+* An update of the horizontal version of KCV
+* Some changes to the way construction/drop/development logging is handled
+
 ## Frequently Asked Questions
+
+#### Who the hell are you and where's Zharay?
+I'm no one and I have no clue where Zharay is. I hope he will continue working on this project and that he'll implement many a cool and powerful feature that 4chan's /jp/ or whoever else dreams about. This fork here focuses mainly on merging in upstream changes from Grabacr; new features are not planned for now.
 
 #### Is KCV safe?
 Yes. You are mainly playing off Internet Explorer (IE). The program itself wraps itself around IE and captures all network coming in and out. It only looks for incoming data and uses that for displaying in game information such as ships, expeditions, quests, and so on. **This does not change the game itself in any way**. **It does not change the packets in any way**. For other solutions to say that their version is "safer" while they are asking you to use an API link are just as much a problem as it is with this program.
@@ -55,7 +63,7 @@ Clear your cache and relaunch KCV again. Especially after updates or playing bet
 Easiest way is to just disable translations in the options menu. You can also set the UI's language to Japanese which will disable all translations by default. If you only want certain things translated, deleting the corresponding XML file in the translation folder is your best bet (just be sure to disable auto update).
 
 #### I'm missing XXXX translations! (XXXX is in Japanese)
-Please help me with these when you run into them. The translation engine has the ability to add untranslated text to the corresponding XML file found in translations. Find the untranslated parts at the bottom of the list and message it to me through pastebin on twitter (@Yuubari) or as a bug in GitHub.
+Please help me with these when you run into them. The translation engine has the ability to add untranslated text to the corresponding XML file found in translations. Find the untranslated parts at the bottom of the list and message it to me as a bug in GitHub.
 
 #### Custom Sound Notifications - What?
 These are sounds that play immediately when a normal windows notification is to be displayed. Supported formats are WAV and MP3. You must place them in the "Sounds" and under the sub-directory corresponding to the notification you require. It doesn't matter the name or the number you have; a random file will be chosen to be played every time.

@@ -118,447 +118,585 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Common_Implement_Oncoming" xml:space="preserve">
-    <value>※近期实现该功能</value>
+    <value>※ Wird bald eingebaut</value>
   </data>
   <data name="Common_Notifications_Disable" xml:space="preserve">
-    <value>不通知</value>
+    <value>Keine Benachrichtigungen</value>
   </data>
   <data name="Common_Notifications_NotImplemented" xml:space="preserve">
-    <value>(未实现)</value>
+    <value>(geplant)</value>
   </data>
   <data name="Common_Notifications_Title" xml:space="preserve">
-    <value>通知设置</value>
+    <value>Benachrichtigungen</value>
   </data>
   <data name="Common_Notifications_Windows8" xml:space="preserve">
-    <value>(需要Windows 8 以上的系统)</value>
+    <value>(Windows 8+)</value>
   </data>
   <data name="Common_ShipGirl" xml:space="preserve">
-    <value>舰娘</value>
+    <value>Schiffsmädchen</value>
   </data>
   <data name="Debug" xml:space="preserve">
     <value>Debug</value>
   </data>
   <data name="Debug_NotificationMessage" xml:space="preserve">
-    <value>これはテスト通知です。</value>
+    <value>Dies ist eine Testbenachrichtigung.</value>
   </data>
   <data name="Debug_NotificationMessage_Title" xml:space="preserve">
-    <value>テスト</value>
+    <value>Test</value>
   </data>
   <data name="Dockyard" xml:space="preserve">
-    <value>建造</value>
+    <value>Werft</value>
   </data>
   <data name="Dockyard_Complete" xml:space="preserve">
-    <value>完成！</value>
+    <value>Fertig!</value>
   </data>
   <data name="Dockyard_Display_Reveal" xml:space="preserve">
-    <value>显示建造中的舰娘名</value>
+    <value>Schiffsnamen anzeigen</value>
   </data>
   <data name="Dockyard_Display_Title" xml:space="preserve">
-    <value>显示设置</value>
+    <value>Anzeigeeinstellungen</value>
   </data>
   <data name="Dockyard_Locked" xml:space="preserve">
-    <value>该建造坞被锁定</value>
+    <value>Gesperrt</value>
   </data>
   <data name="Dockyard_NotificationMessage" xml:space="preserve">
-    <value>工厂的第 {0} 个建造坞的{1}建造完毕。</value>
+    <value>Bau von {1} in Dock {0} ist abgeschlossen.</value>
   </data>
   <data name="Dockyard_NotificationMessage_Title" xml:space="preserve">
-    <value>建造完毕</value>
+    <value>Werft</value>
   </data>
   <data name="Dockyard_Notifications_Enable" xml:space="preserve">
-    <value>建造完成时通知</value>
+    <value>Benachrichtigen wenn fertiggestellt</value>
   </data>
   <data name="Dockyard_Notifications_Individual" xml:space="preserve">
-    <value>仅通知指定的建造坞</value>
+    <value>Individuelle Dock Einstellungen</value>
   </data>
   <data name="Dockyard_ShipName" xml:space="preserve">
-    <value>建造中的舰娘</value>
+    <value>Schiff in Bau</value>
   </data>
   <data name="Dockyard_TimeComplete" xml:space="preserve">
-    <value>建造完成时间</value>
+    <value>Zeit bis Fertigstellung</value>
   </data>
   <data name="Dockyard_TimeRemaining" xml:space="preserve">
-    <value>距离建造完成还有</value>
+    <value>Verbleibende Zeit</value>
   </data>
   <data name="Dockyard_Unused" xml:space="preserve">
-    <value>未使用</value>
+    <value>Leer</value>
   </data>
   <data name="Expedition" xml:space="preserve">
-    <value>远征</value>
+    <value>Expeditionen</value>
   </data>
   <data name="Expedition_NoExpedition" xml:space="preserve">
-    <value>该舰队没有在远征中</value>
+    <value>Nicht auf einer Expedition.</value>
   </data>
   <data name="Expedition_NotificationMessage" xml:space="preserve">
-    <value>「{0}」远征归来。</value>
+    <value>「{0}」 ist von einer Expedition zurück.</value>
   </data>
   <data name="Expedition_NotificationMessage_Title" xml:space="preserve">
-    <value>远征结束</value>
+    <value>Expedition</value>
   </data>
   <data name="Expedition_Notifications_Enable" xml:space="preserve">
-    <value>舰队远征结束时通知</value>
+    <value>Bei Rückkehr benachrichtigen</value>
   </data>
   <data name="Expedition_Notifications_Individual" xml:space="preserve">
-    <value>仅通知指定的舰队</value>
+    <value>Individuelle Flotten Einstellungen</value>
   </data>
   <data name="Expedition_TimeComplete" xml:space="preserve">
-    <value>舰队返回时间</value>
+    <value>Abschluss</value>
   </data>
   <data name="Expedition_TimeRemaining" xml:space="preserve">
-    <value>距离舰队返回还有</value>
+    <value>Verbleibend</value>
   </data>
   <data name="Fleets" xml:space="preserve">
-    <value>舰队</value>
+    <value>Flotten</value>
   </data>
   <data name="Homeport_FleetHQ" xml:space="preserve">
-    <value>司令部</value>
+    <value>Flotten HQ</value>
   </data>
   <data name="Homeport_InstantBuild" xml:space="preserve">
-    <value>高速建造材料:</value>
+    <value>Sofort Bau:  </value>
   </data>
   <data name="Homeport_InstantRepair" xml:space="preserve">
-    <value>高速修复材料:</value>
+    <value>Sofort Reparatur:</value>
   </data>
   <data name="Homeport_NoOfEquipment" xml:space="preserve">
-    <value>所持有的装备:</value>
+    <value>Ausrüstung:</value>
   </data>
   <data name="Homeport_NoOfShips" xml:space="preserve">
-    <value>所持有的舰娘:</value>
+    <value>Schiffsmädchen:  </value>
   </data>
   <data name="IntegratedView" xml:space="preserve">
-    <value>総合</value>
+    <value>Überblick</value>
   </data>
   <data name="MessageBar_Expedition" xml:space="preserve">
-    <value>この艦隊は遠征中です。</value>
+    <value>Diese Flotte ist auf einer Expedition.</value>
   </data>
   <data name="MessageBar_Expedition_TimeCompletion" xml:space="preserve">
-    <value> 完了時刻:</value>
+    <value> Zeit bis zur Rückkehr:</value>
   </data>
   <data name="MessageBar_Expedition_TimeRemaining" xml:space="preserve">
-    <value> 帰投まで:</value>
+    <value> Verbleibende Zeit:</value>
   </data>
   <data name="MessageBar_Repairing" xml:space="preserve">
-    <value>艦隊に入渠中の艦娘がいます。 完了時刻: {0:MM/dd HH\:mm} 完了まで: {1}:{2:mm\:ss}</value>
+    <value>Es sind derzeit Schiffe in der Reparatur. Zeit bis zur Fertigstellung: {0:MM/dd HH\:mm}  Verbleibende Zeit: {1}:{2:mm\:ss}</value>
   </data>
   <data name="MessageBar_Repairing_Null" xml:space="preserve">
-    <value>艦隊に入渠中の艦娘がいます。</value>
+    <value>Es sind derzeit Schiffe in der Reparatur..</value>
   </data>
   <data name="MessageBar_ReSortie_BadCondition" xml:space="preserve">
-    <value>疲労中の艦娘</value>
+    <value>erschöpft sind</value>
   </data>
   <data name="MessageBar_ReSortie_CanNotReSortie" xml:space="preserve">
-    <value>艦隊に{0}がいます。</value>
+    <value>Einige Schiffe in deiner Flotte, die {0}.</value>
   </data>
   <data name="MessageBar_ReSortie_CanReSortie" xml:space="preserve">
-    <value>出撃可能！</value>
+    <value>bereit zum Einsatz sind!</value>
   </data>
   <data name="MessageBar_ReSortie_LackForResources" xml:space="preserve">
-    <value>未補給の艦娘</value>
+    <value>Versorgung brauchen.</value>
   </data>
   <data name="MessageBar_ReSortie_Remaining" xml:space="preserve">
-    <value>再出撃までの目安: </value>
+    <value>Wartezeit: </value>
   </data>
   <data name="MessageBar_ReSortie_Separator" xml:space="preserve">
-    <value>・</value>
+    <value>, </value>
   </data>
   <data name="MessageBar_ReSortie_Wounded" xml:space="preserve">
-    <value>中破以上の艦娘</value>
+    <value>schwer beschädigt sind</value>
   </data>
   <data name="Quests" xml:space="preserve">
-    <value>任务</value>
+    <value>Quests</value>
   </data>
   <data name="Quests_CurrentQuestList" xml:space="preserve">
-    <value>现在进行中的任务</value>
+    <value>Aktive Quests</value>
   </data>
   <data name="Quests_Daily" xml:space="preserve">
-    <value>每日任务</value>
+    <value>Tägliche Quests</value>
   </data>
   <data name="Quests_Notice" xml:space="preserve">
-    <value>※任务完成状况(50 %, 80 %) 和游戏内显示的相同。敌方舰队击破数和远征成功数等不能被显示</value>
+    <value>※ Die Indikatoren (50%, 80%) spiegeln in-Game Indikatoren wieder. Gegnerische Flottenkills, erfolgreiche Expeditionen, etc. werden nicht aktiv gezählt.</value>
   </data>
   <data name="Quests_Untaken" xml:space="preserve">
-    <value>请点击游戏中的 [任務 (クエスト)]，以便取得任务信息</value>
+    <value>Bitte öffne das in-Game Questmenü um die Questliste zu füllen.</value>
   </data>
   <data name="Quests_Weekly" xml:space="preserve">
-    <value>每周任务</value>
+    <value>Wöchentliche Quests</value>
   </data>
   <data name="Quest_Detail_Untaken" xml:space="preserve">
-    <value>请浏览所有的任务画面</value>
+    <value>Bitte öffne alle Questseiten.</value>
   </data>
   <data name="Quest_Progress_50" xml:space="preserve">
-    <value> 50 % </value>
+    <value> 50% </value>
   </data>
   <data name="Quest_Progress_80" xml:space="preserve">
-    <value> 80 % </value>
+    <value> 80% </value>
   </data>
   <data name="Quest_State_Accomplished" xml:space="preserve">
-    <value>完成</value>
+    <value> Fertig </value>
   </data>
   <data name="Quest_Title_Untaken" xml:space="preserve">
-    <value>(未接受的任务)</value>
+    <value>(unbekanntes Quest)</value>
   </data>
   <data name="Repairyard" xml:space="preserve">
-    <value>入渠</value>
+    <value>Reparaturen</value>
   </data>
   <data name="Repairyard_Locked" xml:space="preserve">
-    <value>该船坞被锁定</value>
+    <value>Gesperrt</value>
   </data>
   <data name="Repairyard_NotificationMessage" xml:space="preserve">
-    <value>修理渠的第 {0} 修理坞的「{1}」整备完毕。</value>
+    <value>Reparaturen an {1} in Dock {0} sind abgeschlossen.</value>
   </data>
   <data name="Repairyard_NotificationMessage_Title" xml:space="preserve">
-    <value>整备完毕</value>
+    <value>Reparaturwerft</value>
   </data>
   <data name="Repairyard_Notifications_Enable" xml:space="preserve">
-    <value>整备完成时提示</value>
+    <value>Bei Fertigstellung benachrichtigen</value>
   </data>
   <data name="Repairyard_Notifications_Individual" xml:space="preserve">
-    <value>仅通知指定的船坞</value>
+    <value>Individuelle Dock Einstellungen</value>
   </data>
   <data name="Repairyard_ShipName" xml:space="preserve">
-    <value>在修理渠中的舰娘</value>
+    <value>Angedocktes Schiff</value>
   </data>
   <data name="Repairyard_TimeComplete" xml:space="preserve">
-    <value>完成时间</value>
+    <value>Fertigstellung</value>
   </data>
   <data name="Repairyard_TimeRemaining" xml:space="preserve">
-    <value>剩余时间</value>
+    <value>Verbleibend</value>
   </data>
   <data name="Reparyard_Unused" xml:space="preserve">
-    <value>未使用</value>
+    <value>Leer</value>
   </data>
   <data name="ReSortie_NotificationMessage" xml:space="preserve">
-    <value>「{0}」的全体舰娘的疲劳恢复完毕。</value>
+    <value>Alle Schiffe in  「{0}」 haben sich vollständig erholt.</value>
   </data>
   <data name="ReSortie_NotificationMessage_Title" xml:space="preserve">
-    <value>疲劳恢复完毕</value>
+    <value>Erholung beendet</value>
   </data>
   <data name="Screenshot_Failed" xml:space="preserve">
-    <value>截图保存失败: </value>
+    <value>Screenshot speichern fehlgeschlagen: </value>
   </data>
   <data name="Screenshot_Saved" xml:space="preserve">
-    <value>截图保存成功: </value>
+    <value>Screenshot gespeichert: </value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>设置</value>
+    <value>Einstellungen</value>
   </data>
   <data name="Settings_BrowserControl" xml:space="preserve">
-    <value>浏览设置</value>
+    <value>Browser</value>
   </data>
   <data name="Settings_BrowserControl_ClearZoomFactorButton" xml:space="preserve">
-    <value>重新设置窗口大小(100%缩放)</value>
+    <value>Zurücksetzen auf 100%</value>
   </data>
   <data name="Settings_BrowserControl_Display" xml:space="preserve">
-    <value>(显示)</value>
+    <value>(Anzeige)</value>
   </data>
   <data name="Settings_BrowserControl_Notice" xml:space="preserve">
-    <value>※请注意这将会离开游戏</value>
+    <value>※ Dies wird das Spiel schließen, bitte mit Vorsicht verwenden</value>
   </data>
   <data name="Settings_Display" xml:space="preserve">
-    <value>显示设置</value>
+    <value>Anzeigeeinstellungen</value>
   </data>
   <data name="Settings_Language" xml:space="preserve">
-    <value>语言</value>
+    <value>Sprache</value>
   </data>
   <data name="Settings_Network" xml:space="preserve">
-    <value>网络设置</value>
+    <value>Netzwerk</value>
   </data>
   <data name="Settings_Operation" xml:space="preserve">
-    <value>行为设置</value>
+    <value>Verhalten</value>
   </data>
   <data name="Settings_Other" xml:space="preserve">
-    <value>其他</value>
+    <value>Sonstiges</value>
   </data>
   <data name="Settings_Proxy" xml:space="preserve">
-    <value>代理设置</value>
+    <value>Proxy Einstellungen</value>
   </data>
   <data name="Settings_Proxy_Enable" xml:space="preserve">
-    <value>使用代理来连接服务器</value>
+    <value>Proxy verwenden um mit Server zu verbinden</value>
   </data>
   <data name="Settings_Proxy_Enable_4_SSL" xml:space="preserve">
-    <value>使用SSL时也使用代理服务器</value>
+    <value>Proxy für SSL Verbindungen verwenden</value>
   </data>
   <data name="Settings_Proxy_Host" xml:space="preserve">
-    <value>地址</value>
+    <value>Host</value>
   </data>
   <data name="Settings_Proxy_Port" xml:space="preserve">
-    <value>端口</value>
+    <value>Port</value>
   </data>
   <data name="Settings_Screenshot" xml:space="preserve">
-    <value>截图</value>
+    <value>Screenshot Einstellungen</value>
   </data>
   <data name="Settings_Screenshot_FolderSelectionDialog_OpenButton" xml:space="preserve">
-    <value>选择</value>
+    <value>Durchsuchen</value>
   </data>
   <data name="Settings_Screenshot_FolderSelectionDialog_Title" xml:space="preserve">
-    <value>选择一个用来保存截图的文件夹</value>
+    <value>Wähle einen Ort zum Speichern der Screenshots</value>
   </data>
   <data name="Settings_Screenshot_FolderTextBox_Label" xml:space="preserve">
-    <value>截图文件夹</value>
+    <value>Ziel</value>
   </data>
   <data name="Settings_Screenshot_FolderTextBox_Prompt" xml:space="preserve">
-    <value>截图文件夹路径</value>
+    <value>Zielpfad</value>
   </data>
   <data name="Settings_Screenshot_ImageFormat_Label" xml:space="preserve">
-    <value>图片格式</value>
+    <value>Bildformat</value>
   </data>
   <data name="Settings_Screenshot_OpenFolderButton" xml:space="preserve">
-    <value>打开文件夹</value>
+    <value>Ordner öffnen</value>
   </data>
   <data name="Settings_VersionInfo" xml:space="preserve">
-    <value>关于</value>
+    <value>Versionsinfos</value>
   </data>
   <data name="Settings_Window" xml:space="preserve">
-    <value>窗口设置</value>
+    <value>Fenster</value>
   </data>
   <data name="Settings_WindowControl" xml:space="preserve">
-    <value>窗口位置</value>
+    <value>Fenstereinstellungen</value>
   </data>
   <data name="Settings_WindowControl_LocationLeftButton" xml:space="preserve">
-    <value>将窗口放在屏幕左端</value>
+    <value>Fenster am linken Bildschirmrand andocken.</value>
   </data>
   <data name="Settings_WindowControl_LocationLeftButton_Sub" xml:space="preserve">
-    <value>8英寸屏使用(800 x 1280) </value>
+    <value>Für 8 Zoll Tablets (800x1280)</value>
   </data>
   <data name="Settings_Window_TopMost" xml:space="preserve">
-    <value>永远保持在最前端</value>
+    <value>Fenster immer im Vordergrund</value>
   </data>
   <data name="StartContent_ClearCacheButton" xml:space="preserve">
-    <value>キャッシュの削除</value>
+    <value>Cache leeren</value>
   </data>
   <data name="StartContent_ClearCacheButtonMessage" xml:space="preserve">
-    <value>キャッシュを削除しました</value>
+    <value>Browser Cache geleert</value>
   </data>
   <data name="StartContent_Introduction1" xml:space="preserve">
     <value>「提督業も忙しい！」は、艦これを遊びやすくするためのツールです。</value>
   </data>
   <data name="StartContent_Welcom" xml:space="preserve">
-    <value>ようこそ</value>
-  </data>
-  <data name="StatusBar_AirSuperiorityPotential" xml:space="preserve">
-    <value>对空战斗力:</value>
-  </data>
-  <data name="StatusBar_AverageLevel" xml:space="preserve">
-    <value>平均等级:</value>
+    <value>Willkommen</value>
   </data>
   <data name="StatusBar_NotStarted" xml:space="preserve">
-    <value>等待舰これ载入</value>
+    <value>Auf KanColle warten</value>
   </data>
   <data name="StatusBar_Ready" xml:space="preserve">
-    <value>准备完毕</value>
-  </data>
-  <data name="StatusBar_Speed_Fast" xml:space="preserve">
-    <value>高速舰队</value>
-  </data>
-  <data name="StatusBar_Speed_Slow" xml:space="preserve">
-    <value>低速舰队</value>
+    <value>Bereit</value>
   </data>
   <data name="ZoomAction_OutOfRange" xml:space="preserve">
-    <value>无法在 {0} %范围内缩放</value>
+    <value>{0}% Zoom wird nicht unterstützt.</value>
   </data>
   <data name="ZoomAction_ZoomFailed" xml:space="preserve">
-    <value>缩放失败: {0}</value>
+    <value>Zoom fehlgeschlagen: {0}</value>
   </data>
   <data name="Rankings" xml:space="preserve">
-    <value>Rankings</value>
+    <value>Rangliste</value>
   </data>
   <data name="Rankings_RankingsList" xml:space="preserve">
-    <value>Current Rankings</value>
+    <value>Derzeitiges Ranking</value>
   </data>
   <data name="Settings_Logging" xml:space="preserve">
-    <value>Logging</value>
+    <value>Loggen</value>
   </data>
   <data name="Settings_Logging_Enable" xml:space="preserve">
-    <value>Log drops and crafting results to file</value>
+    <value>Drops und Bauergebnisse in Logfile speichern.</value>
   </data>
   <data name="StartContent_SetRegionCookieButton" xml:space="preserve">
-    <value>Set Region Cookie</value>
+    <value>Regions Cookie setzen</value>
   </data>
   <data name="StartContent_SetRegionCookieMessage" xml:space="preserve">
-    <value>Cookie has been set</value>
+    <value>Cookie wurde gesetzt.</value>
   </data>
   <data name="Settings_Translations" xml:space="preserve">
-    <value>Translations</value>
+    <value>Übersetzungen</value>
   </data>
   <data name="Settings_Translations_Add_Enable" xml:space="preserve">
-    <value>Append untranslated items to the translation files?</value>
+    <value>Unübersetzte Punkte an die Übersetzungen anfügen?</value>
   </data>
   <data name="Settings_Translations_Enable" xml:space="preserve">
-    <value>Translate game items, ships, and quests to selected language?</value>
+    <value>Gegenstände, Schiffe und Ausrüstung in die gewählte Sprache übersetzen?</value>
   </data>
   <data name="StartContent_SetRegionCookieToolTip" xml:space="preserve">
-    <value>Make sure DMM.com is set to Japanese (日本語)</value>
-  </data>
-  <data name="StatusBar_TotalAverageLevel" xml:space="preserve">
-    <value>Total Level (Average):</value>
+    <value>Nicht vergessen DMM.com auf Japanisch zu stellen. (日本語)</value>
   </data>
   <data name="Stats_Accuracy" xml:space="preserve">
-    <value>Accuracy</value>
+    <value>Genaugigkeit</value>
   </data>
   <data name="Stats_AntiAir" xml:space="preserve">
-    <value>Anti-Air</value>
+    <value>Flugabwehr</value>
   </data>
   <data name="Stats_AntiSub" xml:space="preserve">
-    <value>Anti-Sub</value>
+    <value>Anti-U-Boot</value>
   </data>
   <data name="Stats_Armor" xml:space="preserve">
-    <value>Armor</value>
-  </data>
-  <data name="Stats_AttackRange" xml:space="preserve">
-    <value>Attack Rng</value>
+    <value>Rüstung</value>
   </data>
   <data name="Stats_DiveBomb" xml:space="preserve">
-    <value>Bombing</value>
+    <value>Tauchbombe</value>
   </data>
   <data name="Stats_Evasion" xml:space="preserve">
-    <value>Evasion</value>
+    <value>Ausweichrate</value>
   </data>
   <data name="Stats_Firepower" xml:space="preserve">
-    <value>Firepower</value>
+    <value>Feuerkraft</value>
   </data>
   <data name="Stats_Health" xml:space="preserve">
-    <value>Health</value>
+    <value>Gesundheit</value>
   </data>
   <data name="Stats_Luck" xml:space="preserve">
-    <value>Luck</value>
+    <value>Glück</value>
   </data>
   <data name="Stats_SightRange" xml:space="preserve">
-    <value>Sight Rng</value>
+    <value>Reichweite</value>
   </data>
   <data name="Stats_Speed" xml:space="preserve">
-    <value>Speed</value>
+    <value>Geschwindigkeit</value>
   </data>
   <data name="Stats_Torpedo" xml:space="preserve">
     <value>Torpedo</value>
   </data>
-  <data name="Rank_Admiral" xml:space="preserve">
-    <value>海军上将</value>
+  <data name="Stats_AttackRange" xml:space="preserve">
+    <value>Angriffsreichweite</value>
   </data>
-  <data name="Rank_Captain" xml:space="preserve">
-    <value>海军上校</value>
+  <data name="ReSortie_CriticalConditionMessage" xml:space="preserve">
+    <value>「{0}」 in {1} ist in einem kritischen Zustand!</value>
   </data>
-  <data name="Rank_Commander" xml:space="preserve">
-    <value>海军中校</value>
+  <data name="ReSortie_CriticalConditionMessage_Title" xml:space="preserve">
+    <value>Kritische Schiffswarnung</value>
   </data>
-  <data name="Rank_Lieutenant" xml:space="preserve">
-    <value>海军上尉</value>
+  <data name="Settings_Accent_CriticalCondition" xml:space="preserve">
+    <value>Fensterfarbe wechseln, wenn Schiff in kritischem Zustand</value>
   </data>
-  <data name="Rank_Lieutenant_Commander" xml:space="preserve">
-    <value>海军少校</value>
+  <data name="Settings_FleetCondition" xml:space="preserve">
+    <value>Verfassung der Flotte</value>
   </data>
-  <data name="Rank_Marshal_Admiral" xml:space="preserve">
-    <value>海军一级上将</value>
+  <data name="Settings_Notify_CriticalCondition" xml:space="preserve">
+    <value>Benachrichtigen, wenn Schiff in kritischem Zustand</value>
   </data>
-  <data name="Rank_Novice_Commander" xml:space="preserve">
-    <value>海军新手中校</value>
+  <data name="Settings_Updates" xml:space="preserve">
+    <value>Updates</value>
   </data>
-  <data name="Rank_Novice_Lieutenant" xml:space="preserve">
-    <value>海军新手上尉</value>
+  <data name="Settings_Updates_AutoUpdateTrans" xml:space="preserve">
+    <value>Übersetzungen automatisch beim Start updaten.</value>
   </data>
-  <data name="Rank_Rear_Admiral" xml:space="preserve">
-    <value>海军少将</value>
+  <data name="Settings_Updates_CheckUpdateButn_ToolTip" xml:space="preserve">
+    <value>Auf neuste Programm und Übersetzungen prüfen.</value>
   </data>
-  <data name="Rank_Vice_Admiral" xml:space="preserve">
-    <value>海军中将</value>
+  <data name="Settings_Updates_CheckUpdatesBtn" xml:space="preserve">
+    <value>Auf Updates prüfen</value>
+  </data>
+  <data name="Settings_Updates_CurrentVersion" xml:space="preserve">
+    <value>Derzeitige</value>
+  </data>
+  <data name="Settings_Updates_OnlineVersion" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="Settings_Updates_UpdateOnStartup" xml:space="preserve">
+    <value>Beim Starten auf Updates prüfen</value>
+  </data>
+  <data name="Settings_Updates_UpdateTransBtn" xml:space="preserve">
+    <value>Übersetzungen herunterladen</value>
+  </data>
+  <data name="Settings_Updates_UpdateTransBtn_ToolTip" xml:space="preserve">
+    <value>Nur Übersetzungen für die gewählte UI Sprache laden!</value>
+  </data>
+  <data name="Tools_Calculator" xml:space="preserve">
+    <value>Rechner</value>
+  </data>
+  <data name="Tools_Calculator_CurrentLevel" xml:space="preserve">
+    <value>Derzeitiges Level</value>
+  </data>
+  <data name="Tools_Calculator_Flagship" xml:space="preserve">
+    <value>Flagschiff</value>
+  </data>
+  <data name="Tools_Calculator_ListPrompt" xml:space="preserve">
+    <value>Schiffsmädchen auswählen</value>
+  </data>
+  <data name="Tools_Calculator_Map" xml:space="preserve">
+    <value>Karte</value>
+  </data>
+  <data name="Tools_Calculator_MVP" xml:space="preserve">
+    <value>MVP</value>
+  </data>
+  <data name="Tools_Calculator_RemainingExp" xml:space="preserve">
+    <value>Verbleibend</value>
+  </data>
+  <data name="Tools_Calculator_Result" xml:space="preserve">
+    <value>Ergebnis</value>
+  </data>
+  <data name="Tools_Calculator_SortieExp" xml:space="preserve">
+    <value>Einsatz Erf.</value>
+  </data>
+  <data name="Tools_Calculator_TargetLevel" xml:space="preserve">
+    <value>Ziel Level</value>
+  </data>
+  <data name="Tools_Rankings" xml:space="preserve">
+    <value>Rangliste</value>
+  </data>
+  <data name="Tools_Rankings_Comment" xml:space="preserve">
+    <value>Kommentar</value>
+  </data>
+  <data name="Tools_Rankings_Experience" xml:space="preserve">
+    <value>Erfahrung</value>
+  </data>
+  <data name="Tools_Rankings_Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="Tools_Rankings_Page" xml:space="preserve">
+    <value>Seite:</value>
+  </data>
+  <data name="Tools_Rankings_Rank" xml:space="preserve">
+    <value>Rang</value>
+  </data>
+  <data name="Tools_Rankings_RankingsList" xml:space="preserve">
+    <value>Derzeitige Ränge</value>
+  </data>
+  <data name="Tools_Rankings_Rate" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="Tools_Rankings_TotalRanked" xml:space="preserve">
+    <value>Gesamt Rang:</value>
+  </data>
+  <data name="Tools_Rankings_User" xml:space="preserve">
+    <value>Benutzer</value>
+  </data>
+  <data name="Updater_Notification_CheckFailed" xml:space="preserve">
+    <value>KCV konnte nicht auf Updates prüfen</value>
+  </data>
+  <data name="Updater_Notification_NewAppVersion" xml:space="preserve">
+    <value>Neue Version von KCV ist verfügbar! 「v{0}」
+Klicke hier, um sie zu downloaden.</value>
+  </data>
+  <data name="Updater_Notification_Title" xml:space="preserve">
+    <value>Updater</value>
+  </data>
+  <data name="Updater_Notification_TransUpdate_Fail" xml:space="preserve">
+    <value>KCV konnte keine Übersetzungen laden!</value>
+  </data>
+  <data name="Updater_Notification_TransUpdate_Same" xml:space="preserve">
+    <value>Übersetzungen sind up-to-date!</value>
+  </data>
+  <data name="Updater_Notification_TransUpdate_Success" xml:space="preserve">
+    <value>Übersetzungen wurden aktualisiert!</value>
+  </data>
+  <data name="Fleets_AirSuperiorityPotential" xml:space="preserve">
+    <value>Luftüberlegenheit</value>
+  </data>
+  <data name="Fleets_Average" xml:space="preserve">
+    <value>Durchschnitt</value>
+  </data>
+  <data name="Fleets_Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="Fleets_Speed_Fast" xml:space="preserve">
+    <value>Schnelle Flotte</value>
+  </data>
+  <data name="Fleets_Speed_Slow" xml:space="preserve">
+    <value>Langsame Flotte</value>
+  </data>
+  <data name="Fleets_Total" xml:space="preserve">
+    <value>Gesamt</value>
+  </data>
+  <data name="ZoomFactorSelector" xml:space="preserve">
+    <value>Spielanzeigegröße</value>
+  </data>
+  <data name="ZoomFactorSelector_Tooltip" xml:space="preserve">
+    <value>Anzeige des Spiel-Bildschirms anpassen.</value>
+  </data>
+  <data name="Settings_Flash" xml:space="preserve">
+    <value>Flash</value>
+  </data>
+  <data name="Settings_Flash_Quality" xml:space="preserve">
+    <value>Flash Qualität:</value>
+  </data>
+  <data name="Settings_Flash_Window_ToolTip" xml:space="preserve">
+    <value>Undurchsichtig: Standard (Der alte IE hat keine HW Beschl.)
+Direct: Schnellste Renderunggeschw. (HW Beschl.)
+GPU: Langsam! GPU Optimierung für Tablets.</value>
+  </data>
+  <data name="Settings_Flash_Window" xml:space="preserve">
+    <value>Flash Fenster:</value>
+  </data>
+  <data name="Settings_Flash_Quality_ToolTip" xml:space="preserve">
+    <value>Beste: Anti-Aliasing auf allen Bildern (Langsamtes)
+Hoch: Standard.
+Auto-Hoch: Senkt die Qualität, wenn nötig.
+Medium: Durchschnittliche Performance
+Auto-Niedrig: Passt die Geschwindigkeit an, wenn nötig.
+Niedrig: Performance über Qualität. Sieht einfach beschissen aus.</value>
+  </data>
+  <data name="Fleets_ViewRange" xml:space="preserve">
+    <value>Gesamt Sichtweite (LoS)</value>
+  </data>
+  <data name="Settings_Updates_GetKCVBtn" xml:space="preserve">
+    <value>Neusten KCV laden</value>
+  </data>
+  <data name="Settings_Updates_GetKCVBtn_ToolTip" xml:space="preserve">
+    <value>Öffnet einen Link zur neusten KCV Version.</value>
+  </data>
+  <data name="Settings_Notify_Fatigue" xml:space="preserve">
+    <value>Benachrichtigen, wenn Flotte wieder fit ist.</value>
+  </data>
+  <data name="Settings_Flash_Message" xml:space="preserve">
+    <value>Funktioniert nun mit DMM.com. OSAPI, und API Links !
+[Du musst das Spiel neuladen, damit das funktioniert.]</value>
   </data>
 </root>

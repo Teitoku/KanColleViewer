@@ -699,4 +699,34 @@ Low: Performance over quality. Ugliest setting.</value>
     <value>This works with DMM.com. OSAPI, and API links now!
 [You must reload the game for the changes to take affect.]</value>
   </data>
+  <data name="Rank_Admiral" xml:space="preserve">
+    <value>Admiral</value>
+  </data>
+  <data name="Rank_Captain" xml:space="preserve">
+    <value>Captain</value>
+  </data>
+  <data name="Rank_Commander" xml:space="preserve">
+    <value>Commander</value>
+  </data>
+  <data name="Rank_Lieutenant" xml:space="preserve">
+    <value>Lieutenant</value>
+  </data>
+  <data name="Rank_Lieutenant_Commander" xml:space="preserve">
+    <value>Lt. Commander</value>
+  </data>
+  <data name="Rank_Marshal_Admiral" xml:space="preserve">
+    <value>Marshal Admiral</value>
+  </data>
+  <data name="Rank_Novice_Commander" xml:space="preserve">
+    <value>Novice Commander</value>
+  </data>
+  <data name="Rank_Novice_Lieutenant" xml:space="preserve">
+    <value>Novice Lieutenant</value>
+  </data>
+  <data name="Rank_Rear_Admiral" xml:space="preserve">
+    <value>Rear-Admiral</value>
+  </data>
+  <data name="Rank_Vice_Admiral" xml:space="preserve">
+    <value>Vice-Admiral</value>
+  </data>
 </root>

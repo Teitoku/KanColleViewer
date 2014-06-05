@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Ships Version="1.0.4">
+<Ships Version="1.0.6">
   <Ship>
     <JP-Name>長門</JP-Name>
     <TR-Name>Nagato</TR-Name>
@@ -1179,5 +1179,21 @@
   <Ship>
     <JP-Name>酒匂改</JP-Name>
     <TR-Name>Sakawa Kai</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>浦風</JP-Name>
+    <TR-Name>Urakaze</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>浦風改</JP-Name>
+    <TR-Name>Urakaze Kai</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>羽黒改二</JP-Name>
+    <TR-Name>Haguro Kai Ni</TR-Name>
+  </Ship>
+  <Ship>
+    <JP-Name>龍驤改二</JP-Name>
+    <TR-Name>Ryuujou Kai Ni</TR-Name>
   </Ship>
 </Ships>

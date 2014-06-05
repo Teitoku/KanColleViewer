@@ -705,4 +705,34 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="Ship_RepairFacilityToolTip" xml:space="preserve">
     <value>Facility: {0}</value>
   </data>
+  <data name="Rank_Admiral" xml:space="preserve">
+    <value>大将</value>
+  </data>
+  <data name="Rank_Captain" xml:space="preserve">
+    <value>大佐</value>
+  </data>
+  <data name="Rank_Commander" xml:space="preserve">
+    <value>中佐</value>
+  </data>
+  <data name="Rank_Lieutenant" xml:space="preserve">
+    <value>中堅少佐</value>
+  </data>
+  <data name="Rank_Lieutenant_Commander" xml:space="preserve">
+    <value>少佐</value>
+  </data>
+  <data name="Rank_Marshal_Admiral" xml:space="preserve">
+    <value>元帥</value>
+  </data>
+  <data name="Rank_Novice_Commander" xml:space="preserve">
+    <value>新米中佐</value>
+  </data>
+  <data name="Rank_Novice_Lieutenant" xml:space="preserve">
+    <value>新米少佐</value>
+  </data>
+  <data name="Rank_Rear_Admiral" xml:space="preserve">
+    <value>少将</value>
+  </data>
+  <data name="Rank_Vice_Admiral" xml:space="preserve">
+    <value>中将</value>
+  </data>
 </root>

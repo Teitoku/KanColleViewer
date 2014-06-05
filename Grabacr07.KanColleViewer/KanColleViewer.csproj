@@ -27,6 +27,7 @@
     <RestorePackages>true</RestorePackages>
     <TargetFrameworkProfile />
     <ExpressionBlendVersion>12.0.41002.1</ExpressionBlendVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -39,7 +40,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -231,6 +231,7 @@
     <Compile Include="Views\Controls\KanColleHost.cs" />
     <Compile Include="Views\Controls\WebBrowserHelper.cs" />
     <Compile Include="Views\Behaviors\ZoomAction.cs" />
+    <Compile Include="Views\Converters\RankIDToRankNameConverter.cs" />
     <Compile Include="Views\Settings\Browser.xaml.cs">
       <DependentUpon>Browser.xaml</DependentUpon>
     </Compile>
@@ -563,6 +564,9 @@
     <EmbeddedResource Include="Properties\Resources.en.resx">
       <DependentUpon>Resources.resx</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.de.resx">
+      <DependentUpon>Resources.resx</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.ko-KR.resx">
       <DependentUpon>Resources.resx</DependentUpon>
     </EmbeddedResource>
@@ -656,6 +660,7 @@
 xcopy /Y "$(TargetDir)KanColleViewer.exe.config" "$(SolutionDir)KanColleViewer-Compiled"
 xcopy /Y "$(TargetDir)*.dll" "$(SolutionDir)KanColleViewer-Compiled\lib"
 xcopy /Y /E /I "$(TargetDir)en" "$(SolutionDir)KanColleViewer-Compiled\lib\en"
+xcopy /Y /E /I "$(TargetDir)de\KanColleViewer*.*" "$(SolutionDir)KanColleViewer-Compiled\lib\de"
 xcopy /Y /E /I "$(TargetDir)zh-CN" "$(SolutionDir)KanColleViewer-Compiled\lib\zh-CN"
 xcopy /Y /E /I "$(TargetDir)ko-KR" "$(SolutionDir)KanColleViewer-Compiled\lib\ko-KR"
 xcopy /Y /E /I "$(SolutionDir)resources\Translations" "$(SolutionDir)KanColleViewer-Compiled\Translations"

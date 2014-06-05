@@ -78,6 +78,14 @@ namespace Grabacr07.KanColleWrapper.Models
 		}
 
 		/// <summary>
+		/// 提督のランクを取得します。
+		/// </summary>
+		public int RankID
+		{
+			get { return this.RawData.api_rank; }
+		}
+
+        /// <summary>
 		/// 出撃時の勝利数を取得します。
 		/// </summary>
 		public int SortieWins
@@ -122,6 +130,10 @@ namespace Grabacr07.KanColleWrapper.Models
 			get { return this.RawData.api_max_slotitem; }
 		}
 
+		public void Update()
+		{
+			this.RaisePropertyChanged("RankID");
+		}
 
 		internal Admiral(kcsapi_basic rawData)
 			: base(rawData)
