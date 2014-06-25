@@ -187,7 +187,7 @@ namespace Grabacr07.KanColleWrapper
 	        Log(logitem);
 	    }
 
-	    protected void Log(LogItem item)
+	    protected virtual void Log(LogItem item)
         {
             if (!this.EnableLogging) return;
 
