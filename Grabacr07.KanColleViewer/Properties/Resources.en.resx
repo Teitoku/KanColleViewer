@@ -729,4 +729,7 @@ Low: Performance over quality. Ugliest setting.</value>
   <data name="Rank_Vice_Admiral" xml:space="preserve">
     <value>Vice-Admiral</value>
   </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
 </root>

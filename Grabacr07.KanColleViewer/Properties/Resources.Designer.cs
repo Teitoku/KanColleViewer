@@ -1626,6 +1626,15 @@ namespace Grabacr07.KanColleViewer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ツール.
+        /// </summary>
+        public static string Tools {
+            get {
+                return ResourceManager.GetString("Tools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Calculator.
         /// </summary>
         public static string Tools_Calculator {

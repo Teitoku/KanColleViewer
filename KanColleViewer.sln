@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KanColleViewer", "Grabacr07.KanColleViewer\KanColleViewer.csproj", "{C5F0111F-3F68-4A74-BB20-BB762564D080}"
 EndProject
@@ -30,6 +30,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Translations", "Translation
 		resources\Translations\Quests.xml = resources\Translations\Quests.xml
 		resources\Translations\Ships.xml = resources\Translations\Ships.xml
 		resources\Translations\ShipTypes.xml = resources\Translations\ShipTypes.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "German (de)", "German (de)", "{EB7BC13B-398E-4A1C-88D0-FE4D6BA44608}"
+	ProjectSection(SolutionItems) = preProject
+		resources\translations\de\Equipment.xml = resources\translations\de\Equipment.xml
+		resources\translations\de\Operations.xml = resources\translations\de\Operations.xml
+		resources\translations\de\Quests.xml = resources\translations\de\Quests.xml
+		resources\translations\de\Ships.xml = resources\translations\de\Ships.xml
+		resources\translations\de\ShipTypes.xml = resources\translations\de\ShipTypes.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Korean (ko-KR)", "Korean (ko-KR)", "{F356D021-8A8B-47F1-9235-3DFBBA09C03C}"
+	ProjectSection(SolutionItems) = preProject
+		resources\translations\ko-KR\Equipment.xml = resources\translations\ko-KR\Equipment.xml
+		resources\translations\ko-KR\Operations.xml = resources\translations\ko-KR\Operations.xml
+		resources\translations\ko-KR\Quests.xml = resources\translations\ko-KR\Quests.xml
+		resources\translations\ko-KR\Ships.xml = resources\translations\ko-KR\Ships.xml
+		resources\translations\ko-KR\ShipTypes.xml = resources\translations\ko-KR\ShipTypes.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chinese (zh-CN)", "Chinese (zh-CN)", "{7945DA4F-E951-4E9E-95CA-B48C0F5A392F}"
+	ProjectSection(SolutionItems) = preProject
+		resources\translations\zh-CN\Equipment.xml = resources\translations\zh-CN\Equipment.xml
+		resources\translations\zh-CN\Operations.xml = resources\translations\zh-CN\Operations.xml
+		resources\translations\zh-CN\Quests.xml = resources\translations\zh-CN\Quests.xml
+		resources\translations\zh-CN\Ships.xml = resources\translations\zh-CN\Ships.xml
+		resources\translations\zh-CN\ShipTypes.xml = resources\translations\zh-CN\ShipTypes.xml
 	EndProjectSection
 EndProject
 Global
@@ -75,5 +102,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F00FC570-2A80-4F61-8364-798CD44514B2} = {7F9428F0-290D-4DBC-80ED-A704ECB12C64}
+		{7945DA4F-E951-4E9E-95CA-B48C0F5A392F} = {74D8B001-9382-4515-8709-5A09B55EB540}
+		{F356D021-8A8B-47F1-9235-3DFBBA09C03C} = {74D8B001-9382-4515-8709-5A09B55EB540}
+		{EB7BC13B-398E-4A1C-88D0-FE4D6BA44608} = {74D8B001-9382-4515-8709-5A09B55EB540}
 	EndGlobalSection
 EndGlobal

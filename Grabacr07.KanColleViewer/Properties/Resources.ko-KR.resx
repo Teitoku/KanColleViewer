@@ -534,4 +534,7 @@
   <data name="Rank_Vice_Admiral" xml:space="preserve">
     <value>중장</value>
   </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
 </root>

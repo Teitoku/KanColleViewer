@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Quests Version="1.0.1">
+<Quests Version="1.0.3">
   <Quest>
     <ID>A1</ID>
     <JP-Name>はじめての「編成」！</JP-Name>
@@ -811,5 +811,75 @@
     <TR-Name>Sortie an aviation battleship fleet!</TR-Name>
     <JP-Detail>航空戦艦2隻を基幹とする艦隊で、西方海域カスガダマ島の敵勢力を撃破せよ！</JP-Detail>
     <TR-Detail>Have 2 BBV ships in your main fleet and score a victory against World 4-4 Boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>136</ID>
+    <JP-Name>「第三十駆逐隊(第二次)」を編成せよ！</JP-Name>
+    <TR-Name>Organise the new 13th Destroyer Fleet</TR-Name>
+    <JP-Detail>「睦月」「弥生」「卯月」「望月」4隻による第三十駆逐隊(第二次)を編成せよ！</JP-Detail>
+    <TR-Detail>Have only Mutsuki, Yayoi, Uzuki and Mochizuki in your fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>137</ID>
+    <JP-Name>「第五戦隊」を編成せよ！</JP-Name>
+    <TR-Name>Organise the 5th Fleet</TR-Name>
+    <JP-Detail>「妙高」「那智」「羽黒」を基幹とした第五戦隊を編成せよ！</JP-Detail>
+    <TR-Detail>Have Myoukou, Nachi and Haguro in your fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>138</ID>
+    <JP-Name>新編「第二航空戦隊」を編成せよ！</JP-Name>
+    <TR-Name>Organise the new 2nd Carrier Division</TR-Name>
+    <JP-Detail>「飛龍改二」(※旗艦)及び「蒼龍」を基幹とした二航戦(要駆逐艦2隻)を編成せよ！</JP-Detail>
+    <TR-Detail>Have Hiryuu Kai Ni (as the flagship), Souryuu and 2 destroyers in your fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>139</ID>
+    <JP-Name>潜水艦隊「第六艦隊」を編成せよ！</JP-Name>
+    <TR-Name>Organise the 6th Submarine Fleet</TR-Name>
+    <JP-Detail>「潜水母艦」と複数の潜水艦(4隻以上)からなる潜水艦隊「第六艦隊」を編成せよ！</JP-Detail>
+    <TR-Detail>Have a submarine tender and 4 (or more) submarines in your fleet.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>248</ID>
+    <JP-Name>「第三十駆逐隊」対潜哨戒！</JP-Name>
+    <TR-Name>13th Destroyer Fleet's Anti-Submarine Patrol</TR-Name>
+    <JP-Detail>「第三十駆逐隊(第二次)」は直ちに抜錨！鎮守府正面の対潜哨戒を実施せよ！</JP-Detail>
+    <TR-Detail>Deploy the new 13th Destroyer Fleet to World 1-5.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>249</ID>
+    <JP-Name>「第五戦隊」出撃せよ！</JP-Name>
+    <TR-Name>Deploy the 5th Fleet</TR-Name>
+    <JP-Detail>「第五戦隊」は沖ノ島沖の戦闘哨戒を実施、敵艦隊主力を捕捉、これを撃滅せよ！</JP-Detail>
+    <TR-Detail>Deploy Myoukou (妙高), Nachi  (那智) and Haguro (羽黒) to World 2-5. Score an S rank victory against the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>250</ID>
+    <JP-Name>新編「第二航空戦隊」出撃せよ！</JP-Name>
+    <TR-Name>Deploy the new 2nd Carrier Division</TR-Name>
+    <JP-Detail>新編「二航戦」を基幹とした艦隊で、珊瑚諸島沖に出撃、敵機動部隊を撃滅せよ！</JP-Detail>
+    <TR-Detail>Deploy Hiryuu Kai Ni (飛龍改二) as the flagship, Souryuu (蒼龍) and two destroyers to World 5-2. You may add two more ships. Score an S rank victory against the boss.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>414</ID>
+    <JP-Name>遠洋潜水艦作戦を実施せよ！</JP-Name>
+    <TR-Name>Blue Waters Submarine Operation</TR-Name>
+    <JP-Detail>「遠洋潜水艦作戦」を実施し、潜水艦隊の練度向上と敵艦隊漸減に努めよ！</JP-Detail>
+    <TR-Detail>Complete expedition 39.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>415</ID>
+    <JP-Name>遠洋潜水艦作戦の成果を拡大せよ！</JP-Name>
+    <TR-Name>Blue Waters Extended Submarine Operation</TR-Name>
+    <JP-Detail>「遠洋潜水艦作戦」を継続実施し、潜水艦隊の練度向上と敵艦隊漸減に努めよ！</JP-Detail>
+    <TR-Detail>Complete expedition 39 again.</TR-Detail>
+  </Quest>
+  <Quest>
+    <ID>614</ID>
+    <JP-Name>機種転換</JP-Name>
+    <TR-Name>Model Conversion</TR-Name>
+    <JP-Detail>「九七式艦攻(友永隊)」搭載空母を秘書艦にした状態で新たに「天山」を2つ廃棄！</JP-Detail>
+    <TR-Detail>With an aircraft carrier equipped with Type 97 Torpedo Bomber (Tomonaga Squadron) as your secretary, scrap 2 Tenzans (simultaneously) to obtain a Tenzan Model 12 (Tomonaga Squadron).</TR-Detail>
   </Quest>
 </Quests>
