@@ -13,10 +13,8 @@ using System.Net.Http;
 
 namespace Grabacr07.KanColleWrapper
 {
-	public class WebLogger : NotificationObject
+	public class WebLogger : Logger
 	{
-		public bool EnableLogging { get; set; }
-
 		private bool waitingForShip;
 		private int dockid;
 		private readonly int[] shipmats;
@@ -28,24 +26,8 @@ namespace Grabacr07.KanColleWrapper
 
         private HttpClient client;
 
-        private enum LogType
-        {
-            BuildItem,
-            BuildShip,
-            ShipDrop
-        };
+	    internal WebLogger(KanColleProxy proxy) : base(proxy) { }
 
-		internal WebLogger(KanColleProxy proxy)
-        {
-			this.shipmats = new int[5];
-
-			// ちょっと考えなおす
-			proxy.api_req_kousyou_createitem.TryParse<kcsapi_createitem>().Subscribe(x => this.CreateItem(x.Data, x.Request));
-			proxy.api_req_kousyou_createship.TryParse<kcsapi_createship>().Subscribe(x => this.CreateShip(x.Request));
-			proxy.api_get_member_kdock.TryParse<kcsapi_kdock[]>().Subscribe(x => this.KDock(x.Data));
-			proxy.api_req_sortie_battleresult.TryParse<kcsapi_battleresult>().Subscribe(x => this.BattleResult(x.Data));
-		}
-		
 		private void CreateItem(kcsapi_createitem item, NameValueCollection req)
 		{
 			Log(LogType.BuildItem, "{0},{1},{2},{3},{4},{5}",
