@@ -22,6 +22,7 @@ namespace Grabacr07.KanColleWrapper
         private bool waitingForShip;
         private int dockid;
         private readonly int[] shipmats;
+        private int secretary;
 
         protected enum LogType
         {
@@ -102,6 +103,7 @@ namespace Grabacr07.KanColleWrapper
                 return LogType.BuildShip;
             }
             public string Result { get; set; }
+            public int Secretary { get; set; }
             public int Fuel { get; set; }
             public int Ammo { get; set; }
             public int Steel { get; set; }
@@ -148,6 +150,7 @@ namespace Grabacr07.KanColleWrapper
         private void CreateShip(NameValueCollection req)
         {
             this.waitingForShip = true;
+            this.secretary = KanColleClient.Current.Homeport.Organization.Fleets[0].Ships[0].Info.SortId;
             this.dockid = Int32.Parse(req["api_kdock_id"]);
             this.shipmats[0] = Int32.Parse(req["api_item1"]);
             this.shipmats[1] = Int32.Parse(req["api_item2"]);
@@ -163,6 +166,7 @@ namespace Grabacr07.KanColleWrapper
                 var logitem = new BuildShip
                 {
                     Result = KanColleClient.Current.Master.Ships[dock.api_created_ship_id].Name,
+                    Secretary = this.secretary,
                     Fuel = this.shipmats[0],
                     Ammo = this.shipmats[1],
                     Steel = this.shipmats[2],
