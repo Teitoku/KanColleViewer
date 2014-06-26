@@ -114,13 +114,13 @@ function CheckChange() {{
       <Value Profile="(Default)">http://teitoku.net/</Value>
     </Setting>
     <Setting Name="WebLoggerBuildItem" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">/kcv/itembuild</Value>
+      <Value Profile="(Default)">/kcv2/itembuild</Value>
     </Setting>
     <Setting Name="WebLoggerBuildShip" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">/kcv/shipbuild</Value>
+      <Value Profile="(Default)">/kcv2/shipbuild</Value>
     </Setting>
     <Setting Name="WebLoggerShipDrop" Type="System.String" Scope="Application">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">/kcv2/shipdrop</Value>
     </Setting>
   </Settings>
 </SettingsFile>
