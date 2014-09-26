@@ -25,6 +25,14 @@
 			 d:DesignHeight="400"
 			 d:DataContext="{d:DesignInstance vm:MainContentViewModel}"
 			 Background="{DynamicResource ThemeBrushKey}">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="../Themes/TabViewHorizontal.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
@@ -32,7 +40,7 @@
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 
-		<Grid>
+		<!--<Grid>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="Auto" />
@@ -78,7 +86,7 @@
 					</Viewbox>
 				</metro2:CallMethodButton>
 			</StackPanel>
-		</Grid>
+		</Grid>-->
 
 		<!--<Border Grid.Row="1"
 				Background="#FFFFFFA0">
@@ -89,38 +97,12 @@
 		</Border>-->
 
 		<Grid Grid.Row="2">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto" />
-				<ColumnDefinition Width="*" />
-			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
 
-			<ScrollViewer VerticalScrollBarVisibility="Auto"
-						  PanningMode="Both">
-				<Grid MinWidth="90"
-					  Background="{DynamicResource ActiveBackgroundBrushKey}">
-					<Grid.RowDefinitions>
-						<RowDefinition Height="Auto" />
-						<RowDefinition Height="Auto" />
-						<RowDefinition Height="Auto" />
-					</Grid.RowDefinitions>
-
-					<metro:TabView ItemsSource="{Binding TabItems}"
-								   SelectedValue="{Binding SelectedItem}" />
-
-					<Rectangle Grid.Row="1"
-							   Height="1"
-							   Margin="20,5,20,0"
-							   Fill="{DynamicResource InactiveForegroundBrushKey}"
-							   Opacity="0.5" />
-
-					<metro:TabView Grid.Row="2"
-								   ItemsSource="{Binding SystemTabItems}"
-								   SelectedValue="{Binding SelectedItem}"
-								   Margin="0,0,0,20" />
-				</Grid>
-			</ScrollViewer>
-
-			<Grid Grid.Column="1">
+			<Grid VerticalAlignment="Top">
 				<ItemsControl ItemsSource="{Binding TabItems}">
 					<ItemsControl.ItemsPanel>
 						<ItemsPanelTemplate>
@@ -176,6 +158,42 @@
 					</DataTemplate>
 				</Grid.Resources>
 			</Grid>
+			<ScrollViewer HorizontalScrollBarVisibility="Auto"
+						  PanningMode="Both"
+						  Grid.Row="1" VerticalAlignment="Bottom">
+				<Grid Background="{DynamicResource ActiveBackgroundBrushKey}">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+
+					<metro:TabView ItemsSource="{Binding TabItems}"
+								   SelectedValue="{Binding SelectedItem}"
+								   Style="{DynamicResource HorizontalTabViewStyle}">
+						<metro:TabView.Template>
+							<ControlTemplate TargetType="{x:Type metro:TabView}">
+								<StackPanel Background="{TemplateBinding Background}">
+									<StackPanel Orientation="Horizontal" IsItemsHost="True" />
+								</StackPanel>
+							</ControlTemplate>
+						</metro:TabView.Template>
+					</metro:TabView>
+
+					<Rectangle Grid.Column="1"
+							   Height="1"
+							   Margin="20,5,20,0"
+							   Fill="{DynamicResource InactiveForegroundBrushKey}"
+							   Opacity="0.5" />
+
+					<metro:TabView Grid.Column="2"
+								   ItemsSource="{Binding SystemTabItems}"
+								   SelectedValue="{Binding SelectedItem}"
+								   Margin="0,0,0,20"
+								   Style="{DynamicResource HorizontalTabViewStyle}"/>
+				</Grid>
+			</ScrollViewer>
+
 		</Grid>
 	</Grid>
 </UserControl>
