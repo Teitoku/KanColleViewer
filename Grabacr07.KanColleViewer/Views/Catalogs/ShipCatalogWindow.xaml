@@ -481,7 +481,7 @@
 									  IsChecked="{Binding Midway}"
 									  Margin="10,0" />
 						</WrapPanel>
-					</Border> -->
+					</Border>-->
 				</StackPanel>
 			</Expander>
 
@@ -873,7 +873,7 @@
 										</DataTemplate.Triggers>
 									</DataTemplate>
 								</GridViewColumn.CellTemplate>
-							</GridViewColumn> -->
+							</GridViewColumn>-->
 
 							<GridViewColumn Width="110">
 								<GridViewColumn.Header>
