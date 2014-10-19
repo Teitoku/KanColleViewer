@@ -23,7 +23,7 @@ namespace Grabacr07.KanColleViewer.Views.Controls
 	{
 		private const string PART_ContentHost = "PART_ContentHost";
 		private static readonly Size kanColleSize = new Size(800.0, 480.0);
-		private static readonly Size browserSize = new Size(960.0, 572.0);
+		private static readonly Size browserSize = new Size(800.0, 480.0);
 
 		static KanColleHost()
 		{
@@ -177,7 +177,7 @@ namespace Grabacr07.KanColleViewer.Views.Controls
 			var window = Window.GetWindow(this.WebBrowser);
 			if (window != null)
 			{
-				window.Width = this.WebBrowser.Width;
+				// window.Width = this.WebBrowser.Width;
 			}
 		}
 

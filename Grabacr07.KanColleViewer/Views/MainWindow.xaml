@@ -19,8 +19,8 @@
 				   mc:Ignorable="d"
 				   d:DataContext="{d:DesignInstance viewModels:MainWindowViewModel}"
 				   Title="{Binding Title}"
-				   Width="960"
-				   Height="945"
+				   Width="1280"
+				   Height="600"
 				   MinWidth="{Binding ElementName=KanColleHost, Path=MinWidth}"
 				   Topmost="{Binding TopMost}"
 				   FontSize="12"
@@ -31,7 +31,15 @@
 				   TextOptions.TextFormattingMode="Display"
 				   UseLayoutRounding="True">
 
-	<Window.InputBindings>
+    <metro:MetroWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/TabViewHorizontal.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </metro:MetroWindow.Resources>
+
+    <Window.InputBindings>
 		<KeyBinding Key="F5" Command="{Binding RefreshNavigator}" />
 	</Window.InputBindings>
 
@@ -93,11 +101,13 @@
 
 		<Grid Grid.Row="1">
 			<Grid.RowDefinitions>
-				<RowDefinition Height="*" />
+				<RowDefinition Height="*"
+                               MinHeight="480"/>
 				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto"
+                                  MinWidth="800"/>
 				<ColumnDefinition Width="*" />
 			</Grid.ColumnDefinitions>
 
@@ -124,8 +134,9 @@
 				</WebBrowser>
 			</controls:KanColleHost>
 
-			<ContentControl Grid.Column="1" Grid.RowSpan="2"
-							Content="{Binding Content}">
+			<ContentControl Grid.Column="1" Grid.RowSpan="1"
+							Content="{Binding Content}"
+                            VerticalAlignment="Top">
 				<ContentControl.Resources>
 					<DataTemplate DataType="{x:Type viewModels:StartContentViewModel}">
 						<views:StartContent />
@@ -196,7 +207,55 @@
 					</DataTemplate>
 				</ContentControl.Resources>
 			</ContentControl>
-		</Grid>
+            <ContentControl Grid.Column="1" Grid.Row="1"
+							Content="{Binding Content}"
+                            VerticalAlignment="Top">
+                <ContentControl.Resources>
+                    <DataTemplate DataType="{x:Type viewModels:StartContentViewModel}">
+                    </DataTemplate>
+
+                    <DataTemplate DataType="{x:Type viewModels:MainContentViewModel}">
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto"
+						  PanningMode="Both"
+						  Grid.Row="1"
+                          Grid.Column="1"
+                          VerticalAlignment="Bottom">
+                            <Grid Background="{DynamicResource ActiveBackgroundBrushKey}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <metro:TabView ItemsSource="{Binding TabItems}"
+								   SelectedValue="{Binding SelectedItem}"
+								   Style="{DynamicResource HorizontalTabViewStyle}">
+                                    <metro:TabView.Template>
+                                        <ControlTemplate TargetType="{x:Type metro:TabView}">
+                                            <StackPanel Background="{TemplateBinding Background}">
+                                                <StackPanel Orientation="Horizontal" IsItemsHost="True" />
+                                            </StackPanel>
+                                        </ControlTemplate>
+                                    </metro:TabView.Template>
+                                </metro:TabView>
+
+                                <Rectangle Grid.Column="1"
+							   Height="1"
+							   Margin="5,20,5,0"
+							   Fill="{DynamicResource InactiveForegroundBrushKey}"
+							   Opacity="0.5" />
+
+                                <metro:TabView Grid.Column="2"
+								   ItemsSource="{Binding SystemTabItems}"
+								   SelectedValue="{Binding SelectedItem}"
+								   Margin="0,0,0,20"
+								   Style="{DynamicResource HorizontalTabViewStyle}"/>
+                            </Grid>
+                        </ScrollViewer>
+                    </DataTemplate>
+                </ContentControl.Resources>
+            </ContentControl>
+        </Grid>
 
 		<!-- region Status area -->
 		<Grid Grid.Row="2"

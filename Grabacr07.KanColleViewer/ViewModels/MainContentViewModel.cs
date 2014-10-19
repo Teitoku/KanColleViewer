@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using Grabacr07.KanColleViewer.ViewModels.Contents;
 using Grabacr07.KanColleViewer.ViewModels.Contents.Fleets;
 using Grabacr07.KanColleViewer.ViewModels.Dev;
+using Grabacr07.KanColleViewer.ViewModels.Catalogs;
 using Livet;
+using Livet.Messaging;
 
 namespace Grabacr07.KanColleViewer.ViewModels
 {
@@ -82,5 +84,19 @@ namespace Grabacr07.KanColleViewer.ViewModels
 
 			this.Volume = new VolumeViewModel();
 		}
+
+        public void ShowShipCatalog()
+        {
+            var catalog = new ShipCatalogWindowViewModel();
+            var message = new TransitionMessage(catalog, "Show/ShipCatalogWindow");
+            this.Messenger.RaiseAsync(message);
+        }
+
+        public void ShowSlotItemCatalog()
+        {
+            var catalog = new SlotItemCatalogViewModel();
+            var message = new TransitionMessage(catalog, "Show/SlotItemCatalogWindow");
+            this.Messenger.RaiseAsync(message);
+        }
 	}
 }
