@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\CallMethodButton.cs" />
+    <Compile Include="Controls\CallMethodHyperlink.cs" />
     <Compile Include="Controls\HyperlinkEx.cs" />
     <Compile Include="Controls\SortButton.cs" />
     <Compile Include="Controls\SortDirection.cs" />

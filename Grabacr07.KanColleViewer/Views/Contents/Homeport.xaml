@@ -19,13 +19,6 @@
 			 mc:Ignorable="d"
 			 d:DesignWidth="600"
 			 d:DataContext="{d:DesignInstance viewModels:MainContentViewModel}">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../../Themes/TextButton.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
 
     <i:Interaction.Triggers>
         <livet:InteractionMessageTrigger Messenger="{Binding Messenger}"
@@ -120,21 +113,22 @@
 
                 <TextBlock Grid.Row="0"
 						   Grid.Column="1">
-                    <metro2:CallMethodButton Content="{Binding Resources.Homeport_NoOfShips, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
-                                             MethodName="ShowShipCatalog"
-                                             Style="{StaticResource HyperlinkLikeButton}"/>
-					<!--<Run Text="{Binding Resources.Homeport_NoOfShips, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />-->
-					<Run Text="{Binding Ships.Count, Mode=OneWay}"
-						 Style="{DynamicResource EmphaticTextElementStyleKey}" />
-					<Run Text="/" />
-					<Run Text="{Binding Admiral.Model.MaxShipCount, Mode=OneWay}" />
+					<metro2:CallMethodHyperlink MethodName="ShowShipCatalog">
+						<Run Text="{Binding Resources.Homeport_NoOfShips, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+						<Run Text="{Binding Ships.Count, Mode=OneWay}"
+							 Style="{DynamicResource EmphaticTextElementStyleKey}" />
+						<Run Text="/" />
+						<Run Text="{Binding Admiral.Model.MaxShipCount, Mode=OneWay}" />
+					</metro2:CallMethodHyperlink>
 					<LineBreak />
-					<Run Text="{Binding Resources.Homeport_NoOfEquipment, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
-					<Run Text="{Binding SlotItems.Count, Mode=OneWay}"
-						 Style="{DynamicResource EmphaticTextElementStyleKey}" />
-					<Run Text="/" />
-					<Run Text="{Binding Admiral.Model.MaxSlotItemCount, Mode=OneWay}" />
-				</TextBlock>
+					<metro2:CallMethodHyperlink MethodName="ShowSlotItemCatalog">
+						<Run Text="{Binding Resources.Homeport_NoOfEquipment, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+						<Run Text="{Binding SlotItems.Count, Mode=OneWay}"
+							 Style="{DynamicResource EmphaticTextElementStyleKey}" />
+						<Run Text="/" />
+						<Run Text="{Binding Admiral.Model.MaxSlotItemCount, Mode=OneWay}" />
+					</metro2:CallMethodHyperlink>
+                </TextBlock>
 			</Grid>
 		</StackPanel>
 	</Grid>

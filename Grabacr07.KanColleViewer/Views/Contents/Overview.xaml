@@ -74,22 +74,6 @@
 		</ResourceDictionary>
 	</UserControl.Resources>
 
-	<i:Interaction.Triggers>
-		<livet:InteractionMessageTrigger Messenger="{Binding Messenger}"
-										 MessageKey="Show/ShipCatalogWindow">
-			<livet:TransitionInteractionMessageAction Mode="NewOrActive"
-													  WindowType="catalogs:ShipCatalogWindow"
-													  IsOwned="False" />
-		</livet:InteractionMessageTrigger>
-		<livet:InteractionMessageTrigger Messenger="{Binding Messenger}"
-										 MessageKey="Show/SlotItemCatalogWindow">
-			<livet:TransitionInteractionMessageAction Mode="NewOrActive"
-													  WindowType="catalogs:SlotItemCatalogWindow"
-													  IsOwned="False" />
-		</livet:InteractionMessageTrigger>
-	</i:Interaction.Triggers>
-
-
 	<ScrollViewer VerticalScrollBarVisibility="Auto"
 				  PanningMode="Both">
 		<Grid>
@@ -276,22 +260,6 @@
 
 				<Border Grid.Row="0"
 						Grid.Column="0">
-					<StackPanel>
-						<TextBlock Text="{Binding Resources.Overview_Data, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
-
-						<Rectangle Height="1"
-								   Margin="0,7,0,3"
-								   Style="{DynamicResource SeparatorRectangleStyleKey}" />
-
-						<metro2:CallMethodButton Content="{Binding Resources.Overview_ShipList, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
-												 Padding="12,8"
-												 Margin="0,5,0,8"
-												 MethodName="ShowShipCatalog" />
-
-						<metro2:CallMethodButton Content="{Binding Resources.Overview_EquipmentList, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
-												 Padding="12,8"
-												 MethodName="ShowSlotItemCatalog" />
-					</StackPanel>
 				</Border>
 
 				<metro2:CallMethodButton Grid.Row="0"
