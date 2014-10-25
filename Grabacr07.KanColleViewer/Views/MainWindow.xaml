@@ -209,17 +209,18 @@
 			</ContentControl>
             <ContentControl Grid.Column="1" Grid.Row="1"
 							Content="{Binding Content}"
-                            VerticalAlignment="Top">
+                            VerticalAlignment="Bottom">
                 <ContentControl.Resources>
                     <DataTemplate DataType="{x:Type viewModels:StartContentViewModel}">
                     </DataTemplate>
 
                     <DataTemplate DataType="{x:Type viewModels:MainContentViewModel}">
                         <ScrollViewer HorizontalScrollBarVisibility="Auto"
-						  PanningMode="Both"
-						  Grid.Row="1"
-                          Grid.Column="1"
-                          VerticalAlignment="Bottom">
+									  VerticalScrollBarVisibility="Disabled"
+									  PanningMode="Both"
+									  Grid.Row="1"
+									  Grid.Column="1"
+									  VerticalAlignment="Bottom">
                             <Grid Background="{DynamicResource ActiveBackgroundBrushKey}">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
