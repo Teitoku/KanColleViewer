@@ -99,9 +99,9 @@
 											   HorizontalAlignment="Right"
 											   Margin="10,0,0,0">
 										<Run Text="{Binding Ship.Info.ShipType.Name, Mode=OneWay}"
-											 FontSize="14" />
+											 FontSize="12" />
 										<Run Text=""
-											 FontSize="22"
+											 FontSize="18"
 											 Style="{DynamicResource EmphaticTextElementStyleKey}" />
 									</TextBlock>
 
@@ -109,19 +109,23 @@
 											   Grid.Row="0"
 											   Grid.RowSpan="2"
 											   Margin="4,0,10,0"
+											   TextWrapping="NoWrap"
+											   TextTrimming="CharacterEllipsis"
 											   ToolTip="{Binding StatsToolTip, Mode=OneWay}"
 											   ToolTipService.InitialShowDelay="600">											   >
 										<Run Text="{Binding Ship.Info.Name, Mode=OneWay}"
-											 FontSize="22"
+											 FontSize="18"
 											 Style="{DynamicResource EmphaticTextElementStyleKey}" />
 									</TextBlock>
 
 									<TextBlock Grid.Column="3"
 											   Grid.Row="0"
 											   Margin="10,0,10,10"
-											   Grid.RowSpan="2">
+											   Grid.RowSpan="2"
+											   FontSize="11">
 										<Run Text="Lv." />
 										<Run Text="{Binding Ship.Level, Mode=OneWay}"
+											 FontSize="12"
 											 Style="{DynamicResource EmphaticTextElementStyleKey}" />
 									</TextBlock>
 									<TextBlock Grid.Column="3"
@@ -138,9 +142,11 @@
 											   Grid.Column="4"
 											   Grid.Row="0"
 											   Margin="10,0,10,10"
-											   Grid.RowSpan="2">
+											   Grid.RowSpan="2"
+											   FontSize="11">
 										<Run Text="HP:" />
 										<Run Text="{Binding Ship.HP.Current, Mode=OneWay}"
+											 FontSize="12"
 											 Style="{DynamicResource EmphaticTextElementStyleKey}" />
 										<Run Text="/" />
 										<Run Text="{Binding Ship.HP.Maximum, Mode=OneWay}" />
@@ -171,9 +177,10 @@
 											   Margin="10,0,10,10"
 											   Grid.RowSpan="2">
 										<InlineUIContainer>
-											<controls:ConditionIcon ConditionType="{Binding Ship.ConditionType, Mode=OneWay}" />
+											<controls:ConditionIcon Width="11" Height="11" ConditionType="{Binding Ship.ConditionType, Mode=OneWay}" />
 										</InlineUIContainer>
 										<Run Text="{Binding Ship.Condition, Mode=OneWay}"
+											 FontSize="12"
 											 Style="{DynamicResource EmphaticTextElementStyleKey}" />
 									</TextBlock>
 									<TextBlock Grid.Column="5"
@@ -212,7 +219,9 @@
 												<Border ToolTip="{Binding Info.Name}"
 														Background="Transparent">
 													<controls:SlotItemIcon Type="{Binding Info.IconType}"
-																		   Margin="3,0" />
+																		   Margin="3,0"
+																		   Width="22"
+																		   Height="22" />
 												</Border>
 											</DataTemplate>
 										</ItemsControl.ItemTemplate>
