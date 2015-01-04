@@ -61,15 +61,15 @@ namespace Grabacr07.KanColleWrapper
 
             try
             {
-                switch (item.Type())
+                switch (item.GetType().ToString())
                 {
-                    case LogType.BuildItem:
+                    case "BuildItem":
                         this.PostLog(this.BuildItemRoute, item).Wait();
                         break;
-                    case LogType.BuildShip:
+                    case "BuildShip":
                         this.PostLog(this.BuildShipRoute, item).Wait();
                         break;
-                    case LogType.ShipDrop:
+                    case "ShipDrop":
                         this.PostLog(this.ShipDropRoute, item).Wait();
                         break;
                 }

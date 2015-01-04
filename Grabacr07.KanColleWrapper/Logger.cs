@@ -21,36 +21,23 @@ namespace Grabacr07.KanColleWrapper
 
         private bool waitingForShip;
         private int dockid;
-        private readonly int[] shipmats;
-        private int secretary;
-
-        protected enum LogType
-        {
-            Invalid,
-            BuildItem,
-            BuildShip,
-            ShipDrop
-        };
+        private readonly Craft.Recipe recipe;
 
         protected class LogItem
         {
+
             public LogItem()
             {
                 Time = DateTime.Now;
             }
 
             public DateTime Time { get; set; }
-            //TODO: Probably needs a better way of doing this. Reflection vs abstract properties?
-            public virtual LogType Type()
-            {
-                return LogType.Invalid;
-            }
-
+            
             /// <summary>
             /// Create a CSV serialization of the current class.
             /// </summary>
             /// <returns>A csv string with serialized items. </returns>
-            public string ToCsv()
+            public virtual string ToCsv()
             {
                 PropertyInfo[] properties = this.GetType().GetProperties();
                 var sb = new StringBuilder();
@@ -66,7 +53,7 @@ namespace Grabacr07.KanColleWrapper
             /// 
             /// </summary>
             /// <returns></returns>
-            public string CsvTitle()
+            public virtual string CsvTitle()
             {
                 PropertyInfo[] properties = this.GetType().GetProperties();
                 var sb = new StringBuilder();
@@ -82,41 +69,37 @@ namespace Grabacr07.KanColleWrapper
             }
         }
 
-        protected class BuildItem : LogItem
+        protected class Craft : LogItem
         {
-            public override LogType Type()
+            public class Recipe
             {
-                return LogType.BuildItem;
+                public int Fuel { get; set; }
+                public int Ammo { get; set; }
+                public int Steel { get; set; }
+                public int Bauxite { get; set; }
+                public int BuildMaterials { get; set; }
             }
+            public Recipe CraftRecipe { get; set; }
+            public ShipInfo Secretary { get; set; }
+        }
+        //TODO: Rewrite
+        protected class BuildItem : Craft
+        {
             public string Result { get; set; }
-            public string Secretary { get; set; }
-            public string Fuel { get; set; }
-            public string Ammo { get; set; }
-            public string Steel { get; set; }
-            public string Bauxite { get; set; }
         }
 
-        protected class BuildShip : LogItem
+        protected class BuildShip : Craft
         {
-            public override LogType Type()
+            public ShipInfo Result { get; set; }
+            public override string ToCsv()
             {
-                return LogType.BuildShip;
+
+                return base.ToCsv();
             }
-            public string Result { get; set; }
-            public int Secretary { get; set; }
-            public int Fuel { get; set; }
-            public int Ammo { get; set; }
-            public int Steel { get; set; }
-            public int Bauxite { get; set; }
-            public int BuildMaterials { get; set; }
         }
 
         protected class ShipDrop : LogItem
         {
-            public override LogType Type()
-            {
-                return LogType.ShipDrop;
-            }
             public string Result { get; set; }
             public string Operation { get; set; }
             public string EnemyFleet { get; set; }
@@ -125,8 +108,7 @@ namespace Grabacr07.KanColleWrapper
 
         internal Logger(KanColleProxy proxy)
         {
-            this.shipmats = new int[5];
-
+            recipe = new Craft.Recipe();
             // ちょっと考えなおす
             proxy.api_req_kousyou_createitem.TryParse<kcsapi_createitem>().Subscribe(x => this.CreateItem(x.Data, x.Request));
             proxy.api_req_kousyou_createship.TryParse<kcsapi_createship>().Subscribe(x => this.CreateShip(x.Request));
@@ -136,13 +118,17 @@ namespace Grabacr07.KanColleWrapper
 
         private void CreateItem(kcsapi_createitem item, NameValueCollection req)
         {
+            this.recipe.Fuel = Int32.Parse(req["api_item1"]);
+            this.recipe.Ammo = Int32.Parse(req["api_item2"]);
+            this.recipe.Steel = Int32.Parse(req["api_item3"]);
+            this.recipe.Bauxite = Int32.Parse(req["api_item4"]);
+            this.recipe.BuildMaterials = Int32.Parse(req["api_item5"]);
+
             var logitem = new BuildItem
             {
                 Result = item.api_create_flag == 1 ? KanColleClient.Current.Master.SlotItems[item.api_slot_item.api_slotitem_id].Name : "Penguin",
-                Fuel = req["api_item1"],
-                Ammo = req["api_item2"],
-                Steel = req["api_item3"],
-                Bauxite = req["api_item4"],
+                Secretary = KanColleClient.Current.Homeport.Organization.Fleets[1].Ships[0].Info,
+                CraftRecipe = this.recipe
             };
             Log(logitem);
         }
@@ -150,13 +136,13 @@ namespace Grabacr07.KanColleWrapper
         private void CreateShip(NameValueCollection req)
         {
             this.waitingForShip = true;
-            this.secretary = KanColleClient.Current.Homeport.Organization.Fleets[0].Ships[0].Info.SortId;
             this.dockid = Int32.Parse(req["api_kdock_id"]);
-            this.shipmats[0] = Int32.Parse(req["api_item1"]);
-            this.shipmats[1] = Int32.Parse(req["api_item2"]);
-            this.shipmats[2] = Int32.Parse(req["api_item3"]);
-            this.shipmats[3] = Int32.Parse(req["api_item4"]);
-            this.shipmats[4] = Int32.Parse(req["api_item5"]);
+
+            this.recipe.Fuel = Int32.Parse(req["api_item1"]);
+            this.recipe.Ammo = Int32.Parse(req["api_item2"]);
+            this.recipe.Steel = Int32.Parse(req["api_item3"]);
+            this.recipe.Bauxite = Int32.Parse(req["api_item4"]);
+            this.recipe.BuildMaterials = Int32.Parse(req["api_item5"]);
         }
 
         private void KDock(kcsapi_kdock[] docks)
@@ -165,14 +151,9 @@ namespace Grabacr07.KanColleWrapper
             {
                 var logitem = new BuildShip
                 {
-                    Result = KanColleClient.Current.Master.Ships[dock.api_created_ship_id].Name,
-                    Secretary = this.secretary;
-                    Fuel = this.shipmats[0],
-                    Ammo = this.shipmats[1],
-                    Steel = this.shipmats[2],
-                    Bauxite = this.shipmats[3],
-                    BuildMaterials = this.shipmats[4]
-
+                    Result = KanColleClient.Current.Master.Ships[dock.api_created_ship_id],
+                    Secretary = KanColleClient.Current.Homeport.Organization.Fleets[1].Ships[0].Info,
+                    CraftRecipe = this.recipe
                 };
                 Log(logitem);
                 this.waitingForShip = false;
@@ -202,15 +183,15 @@ namespace Grabacr07.KanColleWrapper
                 string mainFolder = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
 
                 string logpath;
-                switch (item.Type())
+                switch (item.GetType().ToString())
                 {
-                    case LogType.BuildItem:
+                    case "BuildItem":
                         logpath = mainFolder + "\\ItemBuildLog.csv";
                         break;
-                    case LogType.BuildShip:
+                    case "BuildShip":
                         logpath = mainFolder + "\\ShipBuildLog.csv";
                         break;
-                    case LogType.ShipDrop:
+                    case "ShipDrop":
                         logpath = mainFolder + "\\DropLog.csv";
                         break;
                     default:
