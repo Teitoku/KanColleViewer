@@ -21,7 +21,7 @@ namespace Grabacr07.KanColleWrapper
 
         private bool waitingForShip;
         private int dockid;
-        private readonly Craft.Recipe recipe;
+        private readonly BuildShip.Recipe recipe;
 
         protected class LogItem
         {
@@ -77,7 +77,6 @@ namespace Grabacr07.KanColleWrapper
                 public int Ammo { get; set; }
                 public int Steel { get; set; }
                 public int Bauxite { get; set; }
-                public int BuildMaterials { get; set; }
             }
             public Recipe CraftRecipe { get; set; }
             public ShipInfo Secretary { get; set; }
@@ -90,10 +89,11 @@ namespace Grabacr07.KanColleWrapper
 
         protected class BuildShip : Craft
         {
+            public class Recipe : Craft.Recipe
+            { public int BuildMaterials { get; set; } };
             public ShipInfo Result { get; set; }
             public override string ToCsv()
             {
-
                 return base.ToCsv();
             }
         }
@@ -108,7 +108,7 @@ namespace Grabacr07.KanColleWrapper
 
         internal Logger(KanColleProxy proxy)
         {
-            recipe = new Craft.Recipe();
+            recipe = new BuildShip.Recipe();
             // ちょっと考えなおす
             proxy.api_req_kousyou_createitem.TryParse<kcsapi_createitem>().Subscribe(x => this.CreateItem(x.Data, x.Request));
             proxy.api_req_kousyou_createship.TryParse<kcsapi_createship>().Subscribe(x => this.CreateShip(x.Request));
@@ -118,17 +118,17 @@ namespace Grabacr07.KanColleWrapper
 
         private void CreateItem(kcsapi_createitem item, NameValueCollection req)
         {
-            this.recipe.Fuel = Int32.Parse(req["api_item1"]);
-            this.recipe.Ammo = Int32.Parse(req["api_item2"]);
-            this.recipe.Steel = Int32.Parse(req["api_item3"]);
-            this.recipe.Bauxite = Int32.Parse(req["api_item4"]);
-            this.recipe.BuildMaterials = Int32.Parse(req["api_item5"]);
-
             var logitem = new BuildItem
             {
                 Result = item.api_create_flag == 1 ? KanColleClient.Current.Master.SlotItems[item.api_slot_item.api_slotitem_id].Name : "Penguin",
                 Secretary = KanColleClient.Current.Homeport.Organization.Fleets[1].Ships[0].Info,
-                CraftRecipe = this.recipe
+                CraftRecipe = new Craft.Recipe
+                {
+                    Fuel = Int32.Parse(req["api_item1"]),
+                    Ammo = Int32.Parse(req["api_item2"]),
+                    Steel = Int32.Parse(req["api_item3"]),
+                    Bauxite = Int32.Parse(req["api_item4"]),
+                }
             };
             Log(logitem);
         }
@@ -183,7 +183,8 @@ namespace Grabacr07.KanColleWrapper
                 string mainFolder = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
 
                 string logpath;
-                switch (item.GetType().ToString())
+
+                switch (item.GetType().Name)
                 {
                     case "BuildItem":
                         logpath = mainFolder + "\\ItemBuildLog.csv";
