@@ -25,13 +25,13 @@ namespace Grabacr07.KanColleWrapper
 
         protected class LogItem
         {
-
+            protected readonly string LogTimestampFormat = "yyyy-MM-dd HH:mm";
             public LogItem()
             {
-                Time = DateTime.Now;
+                Date = DateTime.Now;
             }
 
-            public DateTime Time { get; set; }
+            public DateTime Date { get; }
             
             /// <summary>
             /// Create a CSV serialization of the current class.
@@ -41,9 +41,13 @@ namespace Grabacr07.KanColleWrapper
             {
                 PropertyInfo[] properties = this.GetType().GetProperties();
                 var sb = new StringBuilder();
+                sb.Append(this.Date.ToString(LogTimestampFormat)).Append(',');
                 foreach (var prp in properties)
                 {
-                    sb.Append(prp.GetValue(this, null)).Append(',');
+                    if (prp.CanRead && prp.Name != "Date")
+                    {
+                        sb.Append(prp.GetValue(this)).Append(',');
+                    }
                 }
                 sb.Length--;
                 return sb.ToString();
@@ -57,15 +61,24 @@ namespace Grabacr07.KanColleWrapper
             {
                 PropertyInfo[] properties = this.GetType().GetProperties();
                 var sb = new StringBuilder();
+                sb.Append("Date").Append(',');
                 foreach (var prp in properties)
                 {
-                    if (prp.CanRead)
-                    {
-                        sb.Append(prp.Name).Append(',');
-                    }
+                    if (prp.Name != "Date") { sb.Append(prp.Name).Append(','); }
                 }
                 sb.Length--;
                 return sb.ToString();
+            }
+            protected Object GetPropertyByString(string s)
+            {
+                Queue<string> q = new Queue<string>(s.Split('.'));
+                return GetPropertyByQueue(q, this); ;
+            }
+            private Object GetPropertyByQueue(Queue<string> s, Object p)
+            {
+                Object o = p.GetType().GetProperty(s.Dequeue()).GetValue(p);
+                if (s.IsEmpty()) return o;
+                return GetPropertyByQueue(s, o);
             }
         }
 
@@ -81,20 +94,52 @@ namespace Grabacr07.KanColleWrapper
             public Recipe CraftRecipe { get; set; }
             public ShipInfo Secretary { get; set; }
         }
-        //TODO: Rewrite
         protected class BuildItem : Craft
         {
             public string Result { get; set; }
+            public override string ToCsv()
+            {    
+                var sb = new StringBuilder();
+                //This is to support templating on semi-arbitrary data for logging
+                //TODO: Define this globally or from file
+                sb.Append(this.Date.ToString(LogTimestampFormat)).Append(',');
+                string[] items = { "Result", "Secretary.ShipType.Name", "CraftRecipe.Fuel", "CraftRecipe.Ammo", "CraftRecipe.Steel", "CraftRecipe.Bauxite" };
+                foreach (var item in items)
+                {
+                    sb.Append(this.GetPropertyByString(item)).Append(',');
+                }
+                sb.Length--;
+                return sb.ToString();
+            }
+            public override string CsvTitle()
+            {
+                return "Date,Result,Secretary,Fuel,Ammo,Steel,Bauxite";
+            }
+
         }
 
         protected class BuildShip : Craft
         {
             public class Recipe : Craft.Recipe
-            { public int BuildMaterials { get; set; } };
+            { public int Materials { get; set; } };
             public ShipInfo Result { get; set; }
             public override string ToCsv()
             {
-                return base.ToCsv();
+                var sb = new StringBuilder();
+                //This is to support templating on semi-arbitrary data for logging
+                //TODO: Define this globally or from file
+                sb.Append(this.Date.ToString(LogTimestampFormat)).Append(',');
+                string[] items = { "Result.Name", "CraftRecipe.Fuel", "CraftRecipe.Ammo", "CraftRecipe.Steel", "CraftRecipe.Bauxite", "CraftRecipe.Materials" };
+                foreach (var item in items)
+                {
+                    sb.Append(this.GetPropertyByString(item)).Append(',');
+                }
+                sb.Length--;
+                return sb.ToString();
+            }
+            public override string CsvTitle()
+            {
+                return "Date,Result,Fuel,Ammo,Steel,Bauxite,# of Build Materials";
             }
         }
 
@@ -105,6 +150,16 @@ namespace Grabacr07.KanColleWrapper
             public string EnemyFleet { get; set; }
             public string Rank { get; set; }
         }
+        protected class Resources : LogItem
+        {
+            public int Fuel { get; set; }
+            public int Ammo { get; set; }
+            public int Steel { get; set; }
+            public int Bauxite { get; set; }
+            public int Materials { get; set; }
+            public int Buckets { get; set; }
+            public int Flamethrowers { get; set; }
+        }
 
         internal Logger(KanColleProxy proxy)
         {
@@ -114,6 +169,9 @@ namespace Grabacr07.KanColleWrapper
             proxy.api_req_kousyou_createship.TryParse<kcsapi_createship>().Subscribe(x => this.CreateShip(x.Request));
             proxy.api_get_member_kdock.TryParse<kcsapi_kdock[]>().Subscribe(x => this.KDock(x.Data));
             proxy.api_req_sortie_battleresult.TryParse<kcsapi_battleresult>().Subscribe(x => this.BattleResult(x.Data));
+            proxy.api_get_member_material.TryParse<kcsapi_material[]>().Subscribe(x => this.MaterialsHistory(x.Data));
+            proxy.api_req_hokyu_charge.TryParse<kcsapi_charge>().Subscribe(x => this.MaterialsHistory(x.Data.api_material));
+            proxy.api_req_kousyou_destroyship.TryParse<kcsapi_destroyship>().Subscribe(x => this.MaterialsHistory(x.Data.api_material));
         }
 
         private void CreateItem(kcsapi_createitem item, NameValueCollection req)
@@ -142,7 +200,7 @@ namespace Grabacr07.KanColleWrapper
             this.recipe.Ammo = Int32.Parse(req["api_item2"]);
             this.recipe.Steel = Int32.Parse(req["api_item3"]);
             this.recipe.Bauxite = Int32.Parse(req["api_item4"]);
-            this.recipe.BuildMaterials = Int32.Parse(req["api_item5"]);
+            this.recipe.Materials = Int32.Parse(req["api_item5"]);
         }
 
         private void KDock(kcsapi_kdock[] docks)
@@ -174,7 +232,44 @@ namespace Grabacr07.KanColleWrapper
             Log(logitem);
         }
 
-        protected virtual void Log(LogItem item)
+        private void MaterialsHistory(kcsapi_material[] source)
+		{
+			if (source == null || source.Length != 7)
+				return;
+
+            var logitem = new Resources
+            {
+                Fuel = source[0].api_value,
+                Ammo = source[1].api_value,
+                Steel = source[2].api_value,
+                Bauxite = source[3].api_value,
+                Materials = source[6].api_value,
+                Buckets = source[5].api_value,
+                Flamethrowers = source[4].api_value
+            };
+			Log(logitem);
+		}
+
+		private void MaterialsHistory(int[] source)
+		{
+			if (source == null || source.Length != 4)
+				return;
+
+            var logitem = new Resources
+            {
+                Fuel = source[0],
+                Ammo = source[1],
+                Steel = source[2],
+                Bauxite = source[3],
+                Materials = KanColleClient.Current.Homeport.Materials.DevelopmentMaterials,
+                Buckets = KanColleClient.Current.Homeport.Materials.InstantRepairMaterials,
+                Flamethrowers = KanColleClient.Current.Homeport.Materials.InstantBuildMaterials
+            };
+
+            Log(logitem);
+ 		}
+
+protected virtual void Log(LogItem item)
         {
             if (!this.EnableLogging) return;
 
@@ -183,7 +278,7 @@ namespace Grabacr07.KanColleWrapper
                 string mainFolder = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
 
                 string logpath;
-
+                //TODO: Make this into a list, addable by function. Possibly set default filename in object
                 switch (item.GetType().Name)
                 {
                     case "BuildItem":
@@ -194,6 +289,9 @@ namespace Grabacr07.KanColleWrapper
                         break;
                     case "ShipDrop":
                         logpath = mainFolder + "\\DropLog.csv";
+                        break;
+                    case "Resources":
+                        logpath = mainFolder + "\\MaterialsLog.csv";
                         break;
                     default:
                         return;
