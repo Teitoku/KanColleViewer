@@ -31,7 +31,7 @@ namespace Grabacr07.KanColleWrapper
                 Date = DateTime.Now;
             }
 
-            public DateTime Date { get; }
+            public DateTime Date { get;  private set; }
             
             /// <summary>
             /// Create a CSV serialization of the current class.
@@ -120,7 +120,7 @@ namespace Grabacr07.KanColleWrapper
 
         protected class BuildShip : Craft
         {
-            public class Recipe : Craft.Recipe
+            new public class Recipe : Craft.Recipe
             { public int Materials { get; set; } };
             public ShipInfo Result { get; set; }
             public override string ToCsv()
